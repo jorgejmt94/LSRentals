@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BEB13FE1FEEBDAB0085515F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB13FD1FEEBDAB0085515F /* LoginController.swift */; };
+		3BEB14001FEEBDBC0085515F /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB13FF1FEEBDBC0085515F /* WelcomeController.swift */; };
 		4670DE521FEC266B00B708B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670DE511FEC266B00B708B3 /* AppDelegate.swift */; };
 		4670DE541FEC266B00B708B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670DE531FEC266B00B708B3 /* ViewController.swift */; };
 		4670DE571FEC266B00B708B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4670DE551FEC266B00B708B3 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BEB13FD1FEEBDAB0085515F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		3BEB13FF1FEEBDBC0085515F /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		4670DE4E1FEC266B00B708B3 /* LSRentals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSRentals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4670DE511FEC266B00B708B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4670DE531FEC266B00B708B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,12 +101,14 @@
 		4670DE501FEC266B00B708B3 /* LSRentals */ = {
 			isa = PBXGroup;
 			children = (
+				3BEB13FD1FEEBDAB0085515F /* LoginController.swift */,
 				4670DE511FEC266B00B708B3 /* AppDelegate.swift */,
 				4670DE531FEC266B00B708B3 /* ViewController.swift */,
 				4670DE551FEC266B00B708B3 /* Main.storyboard */,
 				4670DE581FEC266B00B708B3 /* Assets.xcassets */,
 				4670DE5A1FEC266B00B708B3 /* LaunchScreen.storyboard */,
 				4670DE5D1FEC266B00B708B3 /* Info.plist */,
+				3BEB13FF1FEEBDBC0085515F /* WelcomeController.swift */,
 			);
 			path = LSRentals;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4670DE541FEC266B00B708B3 /* ViewController.swift in Sources */,
+				3BEB13FE1FEEBDAB0085515F /* LoginController.swift in Sources */,
+				3BEB14001FEEBDBC0085515F /* WelcomeController.swift in Sources */,
 				4670DE521FEC266B00B708B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,12 +371,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -414,10 +423,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -427,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UNPY9R3DTL;
 				INFOPLIST_FILE = LSRentals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "La-Salle.LSRentals";
@@ -441,6 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UNPY9R3DTL;
 				INFOPLIST_FILE = LSRentals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "La-Salle.LSRentals";
