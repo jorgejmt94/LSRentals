@@ -10,5 +10,13 @@ import UIKit
 
 class WelcomeController: UIViewController {
 
+    @IBAction func accessButton(_ sender: Any) {
+    }
 
+    @IBAction func logOutButton(_ sender: Any) {
+        
+        //TODO: ESBORRAR CREDENCIALS LOGIN
+    }
+    
+    
 }
