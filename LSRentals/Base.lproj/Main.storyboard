@@ -515,6 +515,9 @@
                                 <state key="normal" title="Log in">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onLoginPressed" destination="hna-8c-9Wo" eventType="touchUpInside" id="RNK-Hu-kPW"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGg-sZ-18o">
                                 <rect key="frame" x="65" y="452" width="245" height="20"/>
@@ -567,7 +570,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="3cf-2t-vOp"/>
                     <connections>
-                        <segue destination="sGh-Xc-jF0" kind="show" id="xco-eG-RT2"/>
+                        <outlet property="loginText" destination="nd2-iW-oGw" id="VgG-qh-VMp"/>
+                        <outlet property="passText" destination="mZg-rK-BjA" id="EZb-5z-1px"/>
+                        <outlet property="remember" destination="cgv-7T-nmL" id="gLz-Rz-IRk"/>
+                        <segue destination="sGh-Xc-jF0" kind="showDetail" id="g2N-vy-yRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSq-vd-tNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -581,7 +587,7 @@
         <image name="map" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xco-eG-RT2"/>
+        <segue reference="g2N-vy-yRD"/>
         <segue reference="VbU-gX-RfP"/>
     </inferredMetricsTieBreakers>
 </document>
