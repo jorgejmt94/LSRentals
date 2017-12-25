@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BE73D5F1FF17B4A001E69F8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE73D5E1FF17B4A001E69F8 /* HttpRequest.swift */; };
+		3BE73D611FF17B85001E69F8 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE73D601FF17B85001E69F8 /* RequestProtocol.swift */; };
+		3BE73D631FF18D7B001E69F8 /* WSRentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE73D621FF18D7B001E69F8 /* WSRentals.swift */; };
+		3BE73D681FF19952001E69F8 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE73D671FF19952001E69F8 /* extensions.swift */; };
 		3BEB13FE1FEEBDAB0085515F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB13FD1FEEBDAB0085515F /* LoginController.swift */; };
 		3BEB14001FEEBDBC0085515F /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB13FF1FEEBDBC0085515F /* WelcomeController.swift */; };
 		4670DE521FEC266B00B708B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670DE511FEC266B00B708B3 /* AppDelegate.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BE73D5E1FF17B4A001E69F8 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		3BE73D601FF17B85001E69F8 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		3BE73D621FF18D7B001E69F8 /* WSRentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRentals.swift; sourceTree = "<group>"; };
+		3BE73D671FF19952001E69F8 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		3BEB13FD1FEEBDAB0085515F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3BEB13FF1FEEBDBC0085515F /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		4670DE4E1FEC266B00B708B3 /* LSRentals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSRentals.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +86,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BE73D5D1FF17B0A001E69F8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3BE73D5E1FF17B4A001E69F8 /* HttpRequest.swift */,
+				3BE73D601FF17B85001E69F8 /* RequestProtocol.swift */,
+				3BE73D621FF18D7B001E69F8 /* WSRentals.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3BE73D661FF19942001E69F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3BE73D671FF19952001E69F8 /* extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3BEB14051FF117540085515F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4670DE531FEC266B00B708B3 /* ViewController.swift */,
+				3BEB13FD1FEEBDAB0085515F /* LoginController.swift */,
+				3BEB13FF1FEEBDBC0085515F /* WelcomeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		4670DE451FEC266A00B708B3 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +137,14 @@
 		4670DE501FEC266B00B708B3 /* LSRentals */ = {
 			isa = PBXGroup;
 			children = (
-				3BEB13FD1FEEBDAB0085515F /* LoginController.swift */,
+				3BE73D661FF19942001E69F8 /* Extensions */,
+				3BE73D5D1FF17B0A001E69F8 /* Network */,
+				3BEB14051FF117540085515F /* Controller */,
 				4670DE511FEC266B00B708B3 /* AppDelegate.swift */,
-				4670DE531FEC266B00B708B3 /* ViewController.swift */,
 				4670DE551FEC266B00B708B3 /* Main.storyboard */,
 				4670DE581FEC266B00B708B3 /* Assets.xcassets */,
 				4670DE5A1FEC266B00B708B3 /* LaunchScreen.storyboard */,
 				4670DE5D1FEC266B00B708B3 /* Info.plist */,
-				3BEB13FF1FEEBDBC0085515F /* WelcomeController.swift */,
 			);
 			path = LSRentals;
 			sourceTree = "<group>";
@@ -266,8 +302,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4670DE541FEC266B00B708B3 /* ViewController.swift in Sources */,
+				3BE73D5F1FF17B4A001E69F8 /* HttpRequest.swift in Sources */,
 				3BEB13FE1FEEBDAB0085515F /* LoginController.swift in Sources */,
+				3BE73D611FF17B85001E69F8 /* RequestProtocol.swift in Sources */,
 				3BEB14001FEEBDBC0085515F /* WelcomeController.swift in Sources */,
+				3BE73D681FF19952001E69F8 /* extensions.swift in Sources */,
+				3BE73D631FF18D7B001E69F8 /* WSRentals.swift in Sources */,
 				4670DE521FEC266B00B708B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
