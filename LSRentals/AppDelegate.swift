@@ -20,7 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "Login");
+        let autologData: [String: String]? = UserConfig.getRememberedUserData();
+        
+        var initialViewController: UIViewController;
+        
+        if autologData == nil {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "Login");
+        }
+        else {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "Welcome");
+        }
         
         self.window?.rootViewController = initialViewController;
         self.window?.makeKeyAndVisible()
