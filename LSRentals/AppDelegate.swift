@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  LSRentals
 //
-//  Created by Jorge Melguizo Torres on 21/12/17.
 //  Copyright © 2017 Albert i Jorge. All rights reserved.
 //
 
