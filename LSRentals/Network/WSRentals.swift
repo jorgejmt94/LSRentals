@@ -17,6 +17,8 @@ struct WSRentals {
     
     static let FUNC_LOGIN       = "login.php";
     
+    static let FUNC_REMEMBER_PASSWORD       = "remember_password.php";
+    
     static let FUNC_APARTMENTS  = "apartments.php";
     
     static func getWebServiceURL(function: String) -> String {

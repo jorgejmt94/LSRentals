@@ -11,15 +11,20 @@ import MapKit
 
 class ApartmentDetailsController: UIViewController {
     
+    @IBOutlet weak var apartmentNameLabel: UILabel!
+    @IBOutlet weak var apartmentAddressLabel: UILabel!
+    @IBOutlet weak var apartmentCapacityLabel: UILabel!
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         //TODO: cargar info apartament
     }
     
+    
     @IBAction func rentButton(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "rentController", sender: self);
+        self.performSegue(withIdentifier: "RentController", sender: self);
     }
     
 }

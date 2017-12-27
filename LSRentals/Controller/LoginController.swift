@@ -77,4 +77,8 @@ class LoginController: UIViewController, RequestProtocol {
         
         print(msg);
     }
+    
+    @IBAction func rememberPasswordButton(_ sender: Any) {
+
+    }
 }

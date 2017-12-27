@@ -37,5 +37,7 @@ public protocol RequestProtocol {
     * it does not seems very useful almost right now.
     */
     func onError(msg: String);
+    
+    
 
 }
