@@ -18,46 +18,67 @@ public class ApartmentTabBarController : UITabBarController {
         ]
 
         Alamofire.request(WSRentals.getWebServiceURL(function: WSRentals.FUNC_APARTMENTS),
-                            headers: headers)
+                          method: .post, headers: headers).validate(statusCode: 200..<300)
             .responseJSON {
                 response in
-                    
-                if let status = response.response?.statusCode {
-                    
-                    switch (status) {
-                        
-                        case 200:
-                            
-                            if let result = response.result.value {
-                                
-                                self.parseApartments(data: result as! NSDictionary)
-                            }
-                            else {
-                                self.showDefaultAlertDialog(title: "Network error", msg: "An error happened obtaining the apartments info", buttonTitle: "Back");
-                                // TODO: pop view
-                            }
-                            break;
-                        
-                        default:
-                            self.showDefaultAlertDialog(title: "Network error", msg: "An error happened obtaining the apartments info", buttonTitle: "Back");
-                        // TODO: pop view
-                        
-                    }
-                }
-        }
-        .responseData { response in
                 
-                debugPrint(response)
-            
+                if (response.result.error == nil) {
 
+                    let json = response.result.value as! NSDictionary;
+                    self.parseApartments(data: json);
+                }
+                else {  // failed
+                    self.showDefaultAlertDialog(
+                        title: "Network error",
+                        msg: "An error happened obtaining the apartments info",
+                        buttonTitle: "Back"
+                    );
+                }
         }
         
         super.viewDidLoad();
     }
     
-    
+    // horrible
     private func parseApartments(data: NSDictionary) {
+        var apartments = [Int: Apartment]();
+
+        let jsonApartments = data.value(forKeyPath: "apartments") as! NSArray;
+
+        for apartment in jsonApartments {
+            
+            let ap = apartment as! NSDictionary;
+            let jsLoc = ap["location"] as! NSDictionary;
+            let location = Location(address: jsLoc["address"] as! String,
+                                    latitude: jsLoc["latitud"] as! Double,
+                                    longitude: jsLoc["longitud"] as! Double
+            );
+            
+            let jsImages = ap["images"] as! NSDictionary;
+            let mainImage = jsImages["main"] as! String;
+            let jsOthers = jsImages.value(forKey: "other") as! NSArray;
+            var others = [String]();
+            
+            for img in jsOthers {
+                
+                others.append(img as! String);
+            }
+            let images = Images(main: mainImage, others: others);
+
+            let current = Apartment(
+                identifier: ap["identifier"] as! Int,
+                name: ap["name"] as! String,
+                info: ap["information"] as! String,
+                location: location,
+                images: images,
+                available: ap["available"] as! Bool,
+                maxCapacity: ap["maximum_capacity"] as! Int,
+                maxDays: ap["maximum_days"] as! Int
+            );
+            
+            apartments[current.identifier] = current;
+        }
         
-        //print(data);
+        Singleton.getInstance().setApartments(apartments);
     }
 }

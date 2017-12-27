@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Apartment: Codable {
+struct Apartment {
     
     let identifier:     Int;
     let name:           String;
@@ -30,9 +30,9 @@ struct Apartment: Codable {
         case maxCapacity = "maximum_capacity";
         case maxDays     = "maximum_days";
     }
+    
+
 }
-
-
 
 struct Location: Codable {
     
