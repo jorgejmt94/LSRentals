@@ -10,8 +10,9 @@ import Foundation
 
 
 class Singleton {
-    static let instance = Singleton();
-    private var apartments = [Int: Apartment]();
+    static let instance     = Singleton();
+    private var apartments  = [Apartment]();
+    private var mapPoints   = [MapAnnotation]();
     
     private init() {}
     
@@ -20,13 +21,23 @@ class Singleton {
         return instance;
     }
     
-    func setApartments(_ apartments: [Int: Apartment]) {
+    func setApartments(_ apartments: [Apartment]) {
         
         self.apartments = apartments;
     }
     
-    func getApartments() -> [Int: Apartment] {
+    func getApartments() -> [Apartment] {
         
         return apartments;
+    }
+    
+    func setMapPoints(_ mapPoints: [MapAnnotation]) {
+        
+        self.mapPoints = mapPoints;
+    }
+    
+    func getMapPoints() -> [MapAnnotation] {
+        
+        return mapPoints;
     }
 }

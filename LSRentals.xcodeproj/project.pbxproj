@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B1F2F361FF40BA000A1023B /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1F2F351FF40BA000A1023B /* MapAnnotation.swift */; };
 		3B5600631FF3B1A9004FE370 /* Apartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5600621FF3B1A9004FE370 /* Apartment.swift */; };
 		3B7016E61FF3F0D800F4B65D /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7016E51FF3F0D800F4B65D /* Singleton.swift */; };
 		3BE73D5F1FF17B4A001E69F8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE73D5E1FF17B4A001E69F8 /* HttpRequest.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B1F2F351FF40BA000A1023B /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		3B5600621FF3B1A9004FE370 /* Apartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apartment.swift; sourceTree = "<group>"; };
 		3B7016E51FF3F0D800F4B65D /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		3BE73D5E1FF17B4A001E69F8 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				3BE73D6A1FF26C99001E69F8 /* UserConfig.swift */,
 				3B5600621FF3B1A9004FE370 /* Apartment.swift */,
 				3B7016E51FF3F0D800F4B65D /* Singleton.swift */,
+				3B1F2F351FF40BA000A1023B /* MapAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				4670DE541FEC266B00B708B3 /* ViewController.swift in Sources */,
 				3BE73D5F1FF17B4A001E69F8 /* HttpRequest.swift in Sources */,
 				3BE73D6B1FF26C99001E69F8 /* UserConfig.swift in Sources */,
+				3B1F2F361FF40BA000A1023B /* MapAnnotation.swift in Sources */,
 				3BEB13FE1FEEBDAB0085515F /* LoginController.swift in Sources */,
 				4617DB731FF1CEB7008E2C4D /* RentController.swift in Sources */,
 				3BE73D611FF17B85001E69F8 /* RequestProtocol.swift in Sources */,

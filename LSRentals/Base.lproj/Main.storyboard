@@ -298,6 +298,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="t51-Gu-AX1">
                                 <rect key="frame" x="2" y="116" width="371" height="500"/>
+                                <connections>
+                                    <outlet property="delegate" destination="oA0-au-G7a" id="V49-Zp-UID"/>
+                                </connections>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAl-UE-5ZL">
                                 <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -355,6 +358,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="MAP" image="map" id="Utq-0e-khG"/>
                     <connections>
+                        <outlet property="mapView" destination="t51-Gu-AX1" id="tXO-mm-xXG"/>
                         <outlet property="switchButton" destination="ulP-58-bYh" id="vlo-hk-ko9"/>
                         <segue destination="zoD-fB-vto" kind="show" id="VkK-vO-uoZ"/>
                     </connections>
@@ -433,6 +437,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="638-kk-9EM">
                                 <rect key="frame" x="0.0" y="120" width="375" height="488"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="krj-bG-vcA" id="yuS-hf-cxF"/>
+                                    <outlet property="delegate" destination="krj-bG-vcA" id="Lr9-bF-LK5"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
