@@ -22,16 +22,12 @@ class RentController: UIViewController {
     }
     
     @IBAction func cancelButton(_ sender: Any) {
-        //TODO: NO VA
         
-        print("here!");
         self.navigationController?.popViewController(animated: true);
     }
     
     @IBAction func rentButton(_ sender: Any) {
         //TODO: enviar reserva
-        print("horo!");
-        //anem a les pantallas dels tabs //TODO: NO VA
         self.navigationController?.popToRootViewController(animated: true)
     }
     

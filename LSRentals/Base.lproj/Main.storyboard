@@ -59,6 +59,7 @@
                         <viewLayoutGuide key="safeArea" id="oxW-8Y-LIS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="IHD-w4-XG3"/>
+                    <navigationItem key="navigationItem" id="LeB-av-Lto"/>
                     <connections>
                         <outlet property="welcomeLabel" destination="Vfd-9b-Lln" id="Ck1-cn-z6I"/>
                         <segue destination="sGh-Xc-jF0" kind="show" identifier="tabBarController" id="ZDB-8y-y0y"/>
@@ -67,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T5f-re-LgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="641" y="303"/>
+            <point key="canvasLocation" x="1174" y="-501"/>
         </scene>
         <!--Rent Controller-->
         <scene sceneID="r4e-mY-jFf">
@@ -185,15 +186,17 @@
                     <connections>
                         <outlet property="apartmentAddressLabel" destination="58M-v9-x1g" id="gGy-0a-fnL"/>
                         <outlet property="apartmentNameLabel" destination="uBA-3E-mBy" id="xHh-yU-w7q"/>
+                        <segue destination="sGh-Xc-jF0" kind="show" id="L3m-pl-Ww4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6M2-Yh-8dV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6692" y="-113"/>
+            <point key="canvasLocation" x="6446" y="-887"/>
         </scene>
         <!--Apartment Details Controller-->
         <scene sceneID="dCY-io-kwn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8S-aW-mcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ApartmentDetails" id="X6B-AH-lHh" customClass="ApartmentDetailsController" customModule="LSRentals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fcs-LG-hYA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -206,7 +209,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección del apartamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gc-cF-iFR">
-                                <rect key="frame" x="20" y="120" width="202.5" height="21"/>
+                                <rect key="frame" x="20" y="120" width="203" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -224,7 +227,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4wc-0h-ao9">
-                                <rect key="frame" x="10" y="427" width="355" height="176"/>
+                                <rect key="frame" x="10" y="427" width="355" height="230"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D66-Jy-Nsi">
                                     <size key="itemSize" width="50" height="50"/>
@@ -243,22 +246,9 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97L-5H-Dap">
-                                <rect key="frame" x="40" y="613" width="295" height="29"/>
-                                <color key="backgroundColor" red="0.43796333630000001" green="0.67448586880000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Rent">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="rentButton:" destination="X6B-AH-lHh" eventType="touchUpInside" id="7hg-IP-DdN"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="97L-5H-Dap" firstAttribute="top" secondItem="4wc-0h-ao9" secondAttribute="bottom" constant="10" id="1VL-mD-wON"/>
-                            <constraint firstItem="97L-5H-Dap" firstAttribute="leading" secondItem="mMI-GL-aLl" secondAttribute="leading" constant="40" id="4Pv-CC-Wcy"/>
                             <constraint firstAttribute="trailing" secondItem="Ol4-4M-KTK" secondAttribute="trailing" constant="10" id="A4Z-ZN-pVg"/>
                             <constraint firstItem="fvs-r6-mrG" firstAttribute="leading" secondItem="mMI-GL-aLl" secondAttribute="leading" constant="20" id="AEG-Fl-ZQD"/>
                             <constraint firstItem="4wc-0h-ao9" firstAttribute="leading" secondItem="mMI-GL-aLl" secondAttribute="leading" constant="10" id="DiW-Qx-aoA"/>
@@ -266,25 +256,34 @@
                             <constraint firstItem="fvs-r6-mrG" firstAttribute="top" secondItem="6Gc-cF-iFR" secondAttribute="bottom" constant="15" id="K5C-TU-p50"/>
                             <constraint firstItem="mMI-GL-aLl" firstAttribute="trailing" secondItem="4wc-0h-ao9" secondAttribute="trailing" constant="10" id="O1H-f5-hdd"/>
                             <constraint firstItem="6Gc-cF-iFR" firstAttribute="top" secondItem="OzX-fW-0i8" secondAttribute="bottom" constant="10" id="Ygj-zy-awM"/>
+                            <constraint firstItem="mMI-GL-aLl" firstAttribute="bottom" secondItem="4wc-0h-ao9" secondAttribute="bottom" constant="10" id="bFA-tn-yZI"/>
                             <constraint firstItem="Ol4-4M-KTK" firstAttribute="leading" secondItem="mMI-GL-aLl" secondAttribute="leading" constant="10" id="d0M-so-Zuh"/>
-                            <constraint firstItem="mMI-GL-aLl" firstAttribute="trailing" secondItem="97L-5H-Dap" secondAttribute="trailing" constant="40" id="dco-ZA-558"/>
                             <constraint firstItem="OzX-fW-0i8" firstAttribute="leading" secondItem="mMI-GL-aLl" secondAttribute="leading" constant="20" id="hZR-q5-eXO"/>
                             <constraint firstItem="OzX-fW-0i8" firstAttribute="top" secondItem="mMI-GL-aLl" secondAttribute="top" constant="25" id="nzU-qx-udL"/>
                             <constraint firstItem="4wc-0h-ao9" firstAttribute="top" secondItem="Ol4-4M-KTK" secondAttribute="bottom" constant="20" id="oxQ-Si-Ej9"/>
-                            <constraint firstItem="mMI-GL-aLl" firstAttribute="bottom" secondItem="97L-5H-Dap" secondAttribute="bottom" constant="25" id="q2m-LF-SGi"/>
                             <constraint firstItem="Ol4-4M-KTK" firstAttribute="top" secondItem="fvs-r6-mrG" secondAttribute="bottom" constant="20" id="ueo-AS-D4I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mMI-GL-aLl"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mlJ-Ot-uMM"/>
+                    <navigationItem key="navigationItem" id="mlJ-Ot-uMM">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="I1e-Xs-TrZ">
+                            <connections>
+                                <action selector="backButton:" destination="X6B-AH-lHh" id="ccE-zD-h38"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Rent" id="80j-wb-Aif">
+                            <connections>
+                                <action selector="rentButton:" destination="X6B-AH-lHh" id="laL-MO-Je9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="apartmentAddressLabel" destination="6Gc-cF-iFR" id="WlZ-rl-xIh"/>
                         <outlet property="apartmentCapacityLabel" destination="fvs-r6-mrG" id="Gbw-Tf-Jvt"/>
                         <outlet property="apartmentNameLabel" destination="OzX-fW-0i8" id="swQ-Hj-jAv"/>
-                        <segue destination="Hft-g8-KEO" kind="show" identifier="rentController" id="c2Z-ve-rze"/>
+                        <segue destination="Hft-g8-KEO" kind="show" identifier="RentController" id="c2Z-ve-rze"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g8S-aW-mcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5745" y="-113"/>
         </scene>
@@ -296,8 +295,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="t51-Gu-AX1">
-                                <rect key="frame" x="2" y="116" width="371" height="500"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="t51-Gu-AX1">
+                                <rect key="frame" x="2" y="160" width="371" height="456"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAl-UE-5ZL">
                                 <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -310,7 +309,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gI4-yc-VAZ">
-                                        <rect key="frame" x="242" y="69" width="79" height="14.5"/>
+                                        <rect key="frame" x="242" y="69" width="79" height="15"/>
                                         <string key="text">Only available
 </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -366,11 +365,14 @@
         <!--Navigation Controller-->
         <scene sceneID="KVE-qt-Wp0">
             <objects>
-                <navigationController id="zoD-fB-vto" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" id="zoD-fB-vto" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P7o-i1-Evf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pvc-YM-eny">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="X6B-AH-lHh" kind="relationship" relationship="rootViewController" id="rJx-Ly-gZh"/>
                     </connections>
@@ -470,11 +472,12 @@
                     <connections>
                         <segue destination="krj-bG-vcA" kind="relationship" relationship="viewControllers" id="6iJ-wj-qnf"/>
                         <segue destination="oA0-au-G7a" kind="relationship" relationship="viewControllers" id="OkP-aF-y30"/>
+                        <segue destination="hna-8c-9Wo" kind="show" id="P5R-aJ-tKI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7x-Ir-Sci" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2616" y="-113"/>
+            <point key="canvasLocation" x="2466" y="-114"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Bwr-2b-X9h">
@@ -561,6 +564,7 @@
                         <viewLayoutGuide key="safeArea" id="2pc-YY-8Na"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="3cf-2t-vOp"/>
+                    <navigationItem key="navigationItem" id="x1Y-kZ-gAv"/>
                     <connections>
                         <outlet property="loginText" destination="nd2-iW-oGw" id="VgG-qh-VMp"/>
                         <outlet property="passText" destination="mZg-rK-BjA" id="EZb-5z-1px"/>
@@ -569,7 +573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSq-vd-tNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448.8" y="-503.29835082458777"/>
+            <point key="canvasLocation" x="1174" y="304"/>
         </scene>
     </scenes>
     <resources>
@@ -578,7 +582,8 @@
         <image name="map" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ePU-OP-K8t"/>
         <segue reference="g2N-vy-yRD"/>
-        <segue reference="VkK-vO-uoZ"/>
+        <segue reference="fSD-pR-WMX"/>
     </inferredMetricsTieBreakers>
 </document>
