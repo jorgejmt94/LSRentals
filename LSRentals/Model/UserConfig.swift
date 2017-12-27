@@ -19,6 +19,10 @@ struct UserConfig {
         UserDefaults.standard.set(token, forKey: TOKEN);
     }
     
+    static func deleteUser(){
+        UserDefaults.standard.removeObject(forKey: TOKEN);
+    }
+    
     static func getRememberedUserData() -> ([String: String])? {
         
         let user    = UserDefaults.standard.string(forKey: USERNAME);
@@ -35,5 +39,9 @@ struct UserConfig {
         ];
         
         return config;
+    }
+    
+    static func getRememberUserName() -> String{
+        return  UserDefaults.standard.string(forKey: USERNAME)!;
     }
 }

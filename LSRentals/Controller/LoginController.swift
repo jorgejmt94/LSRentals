@@ -14,7 +14,6 @@ class LoginController: UIViewController, RequestProtocol {
     @IBOutlet private weak var loginText: UITextField!;
     @IBOutlet private weak var passText: UITextField!;
     
-    @IBOutlet private weak var remember: UISwitch!;
     
     @IBAction private func onLoginPressed() {
         
@@ -60,10 +59,8 @@ class LoginController: UIViewController, RequestProtocol {
             let tkn = responseData["token"] as? String;
             DispatchQueue.main.async {
                 self.showDefaultAlertDialog(title: "OK!", msg: "Just to know everything ok :) Token: \(tkn!)", buttonTitle: "Continue");
-                if self.remember.isOn {  // we must save the user data to autolog the user on next uses
-                    
-                    UserConfig.rememberUser(login: self.loginText.text!, token: tkn!);
-                }
+                // we must save the user data to autolog the user on next uses
+                UserConfig.rememberUser(login: self.loginText.text!, token: tkn!);
                 
                 WSRentals.setToken(tkn: tkn!);
                 self.performSegue(withIdentifier: "login_success", sender: self);
