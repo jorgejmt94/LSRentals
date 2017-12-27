@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "Login");
         }
         else {
+            WSRentals.setToken(tkn: autologData![UserConfig.TOKEN]!);
             initialViewController = storyboard.instantiateViewController(withIdentifier: "Welcome");
         }
         
