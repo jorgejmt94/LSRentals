@@ -57,9 +57,13 @@ class LoginController: UIViewController, RequestProtocol {
         
         if success == 1 {   // request was OK
             
-            let token = responseData["token"] ?? "";
+            let tkn = responseData["token"] as? String;
             DispatchQueue.main.async {
-                self.showDefaultAlertDialog(title: "OK!", msg: "Just to know everything ok :) Token: \(token)", buttonTitle: "Continue");
+                self.showDefaultAlertDialog(title: "OK!", msg: "Just to know everything ok :) Token: \(tkn!)", buttonTitle: "Continue");
+                if self.remember.isOn {  // we must save the user data to autolog the user on next uses
+                    
+                    UserConfig.rememberUser(login: self.loginText.text!, token: tkn!);
+                }
             }
         }
         else {  // an error happened with the data provided by the user
