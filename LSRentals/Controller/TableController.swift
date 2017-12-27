@@ -26,7 +26,10 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     }
 
     @IBAction func logOutButton(_ sender: Any) {
-        //TODO: esborrar credencials
+        
+        UserConfig.deleteUser();
+        self.navigationController?.popViewController(animated: true);
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{

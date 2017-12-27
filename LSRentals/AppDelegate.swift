@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else {
             WSRentals.setToken(tkn: autologData![UserConfig.TOKEN]!);
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "ApartmentDetails");
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "Welcome");
         }
         
         self.window?.rootViewController = initialViewController;

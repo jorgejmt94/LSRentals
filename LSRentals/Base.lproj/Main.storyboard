@@ -281,7 +281,7 @@
                         <outlet property="apartmentAddressLabel" destination="6Gc-cF-iFR" id="WlZ-rl-xIh"/>
                         <outlet property="apartmentCapacityLabel" destination="fvs-r6-mrG" id="Gbw-Tf-Jvt"/>
                         <outlet property="apartmentNameLabel" destination="OzX-fW-0i8" id="swQ-Hj-jAv"/>
-                        <segue destination="Hft-g8-KEO" kind="show" identifier="RentController" id="c2Z-ve-rze"/>
+                        <segue destination="Hft-g8-KEO" kind="show" identifier="rentController" id="c2Z-ve-rze"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8S-aW-mcx" userLabel="First Responder" sceneMemberID="firstResponder"/>

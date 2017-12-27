@@ -20,6 +20,9 @@ class MapController: UIViewController {
     
     
     @IBAction func logOutButton(_ sender: Any) {
-        //TODO: esborrar credencials
+
+        UserConfig.deleteUser();
+        self.navigationController?.popViewController(animated: true);
+
     }
 }
