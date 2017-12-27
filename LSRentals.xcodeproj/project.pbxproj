@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5600631FF3B1A9004FE370 /* Apartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5600621FF3B1A9004FE370 /* Apartment.swift */; };
+		3B7016E61FF3F0D800F4B65D /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7016E51FF3F0D800F4B65D /* Singleton.swift */; };
 		3BE73D5F1FF17B4A001E69F8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE73D5E1FF17B4A001E69F8 /* HttpRequest.swift */; };
 		3BE73D611FF17B85001E69F8 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE73D601FF17B85001E69F8 /* RequestProtocol.swift */; };
 		3BE73D631FF18D7B001E69F8 /* WSRentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE73D621FF18D7B001E69F8 /* WSRentals.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B5600621FF3B1A9004FE370 /* Apartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apartment.swift; sourceTree = "<group>"; };
+		3B7016E51FF3F0D800F4B65D /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		3BE73D5E1FF17B4A001E69F8 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		3BE73D601FF17B85001E69F8 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		3BE73D621FF18D7B001E69F8 /* WSRentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRentals.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				3BE73D6A1FF26C99001E69F8 /* UserConfig.swift */,
+				3B5600621FF3B1A9004FE370 /* Apartment.swift */,
+				3B7016E51FF3F0D800F4B65D /* Singleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 			files = (
 				3BE73D6D1FF2F339001E69F8 /* ApartmentTabBarController.swift in Sources */,
 				461F5A361FF2DE1800B368CB /* TableController.swift in Sources */,
+				3B5600631FF3B1A9004FE370 /* Apartment.swift in Sources */,
 				4670DE541FEC266B00B708B3 /* ViewController.swift in Sources */,
 				3BE73D5F1FF17B4A001E69F8 /* HttpRequest.swift in Sources */,
 				3BE73D6B1FF26C99001E69F8 /* UserConfig.swift in Sources */,
@@ -420,6 +427,7 @@
 				4617DB711FF1CE87008E2C4D /* ApartmentDetailsController.swift in Sources */,
 				3BE73D681FF19952001E69F8 /* extensions.swift in Sources */,
 				3BE73D631FF18D7B001E69F8 /* WSRentals.swift in Sources */,
+				3B7016E61FF3F0D800F4B65D /* Singleton.swift in Sources */,
 				4617DB6F1FF1CE58008E2C4D /* MapController.swift in Sources */,
 				4670DE521FEC266B00B708B3 /* AppDelegate.swift in Sources */,
 			);
