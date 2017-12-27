@@ -77,6 +77,6 @@ class LoginController: UIViewController, RequestProtocol {
     }
     
     @IBAction func rememberPasswordButton(_ sender: Any) {
-
+        self.performSegue(withIdentifier: "RememberPassword", sender: self);
     }
 }

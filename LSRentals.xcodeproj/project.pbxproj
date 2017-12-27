@@ -22,6 +22,7 @@
 		4617DB711FF1CE87008E2C4D /* ApartmentDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4617DB701FF1CE87008E2C4D /* ApartmentDetailsController.swift */; };
 		4617DB731FF1CEB7008E2C4D /* RentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4617DB721FF1CEB7008E2C4D /* RentController.swift */; };
 		461F5A361FF2DE1800B368CB /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461F5A351FF2DE1800B368CB /* TableController.swift */; };
+		463BEF321FF466ED00B8E71E /* RememberPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463BEF311FF466ED00B8E71E /* RememberPasswordController.swift */; };
 		4670DE521FEC266B00B708B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670DE511FEC266B00B708B3 /* AppDelegate.swift */; };
 		4670DE541FEC266B00B708B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670DE531FEC266B00B708B3 /* ViewController.swift */; };
 		4670DE571FEC266B00B708B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4670DE551FEC266B00B708B3 /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		4617DB701FF1CE87008E2C4D /* ApartmentDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentDetailsController.swift; sourceTree = "<group>"; };
 		4617DB721FF1CEB7008E2C4D /* RentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentController.swift; sourceTree = "<group>"; };
 		461F5A351FF2DE1800B368CB /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
+		463BEF311FF466ED00B8E71E /* RememberPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberPasswordController.swift; sourceTree = "<group>"; };
 		4670DE4E1FEC266B00B708B3 /* LSRentals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSRentals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4670DE511FEC266B00B708B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4670DE531FEC266B00B708B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				4617DB721FF1CEB7008E2C4D /* RentController.swift */,
 				461F5A351FF2DE1800B368CB /* TableController.swift */,
 				3BE73D6C1FF2F339001E69F8 /* ApartmentTabBarController.swift */,
+				463BEF311FF466ED00B8E71E /* RememberPasswordController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				3BE73D611FF17B85001E69F8 /* RequestProtocol.swift in Sources */,
 				3BEB14001FEEBDBC0085515F /* WelcomeController.swift in Sources */,
 				4617DB711FF1CE87008E2C4D /* ApartmentDetailsController.swift in Sources */,
+				463BEF321FF466ED00B8E71E /* RememberPasswordController.swift in Sources */,
 				3BE73D681FF19952001E69F8 /* extensions.swift in Sources */,
 				3BE73D631FF18D7B001E69F8 /* WSRentals.swift in Sources */,
 				3B7016E61FF3F0D800F4B65D /* Singleton.swift in Sources */,

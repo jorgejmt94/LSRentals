@@ -22,14 +22,14 @@ class WelcomeController: UIViewController {
     }
     
     @IBAction func accessButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "tabBarController", sender: self);
+        self.performSegue(withIdentifier: "tabBar", sender: self);
 
     }
 
     @IBAction func logOutButton(_ sender: Any) {
         
         UserConfig.deleteUser();
-        self.performSegue(withIdentifier: "logInController", sender: self);
+        self.performSegue(withIdentifier: "logIn", sender: self);
         //TODO: Kill view
 
     }
