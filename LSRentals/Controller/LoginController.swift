@@ -65,6 +65,7 @@ class LoginController: UIViewController, RequestProtocol {
                     UserConfig.rememberUser(login: self.loginText.text!, token: tkn!);
                 }
                 
+                WSRentals.setToken(tkn: tkn!);
                 self.performSegue(withIdentifier: "login_success", sender: self);
             }
         }
