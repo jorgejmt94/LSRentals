@@ -11,12 +11,26 @@ import Foundation
 
 struct WSRentals {
     
-    static let BASE_URL = "https://v2msoft.com/clientes/lasalle/ios-17-18/";
+    static var token: String? = nil;
     
-    static let FUNC_LOGIN   = "login.php";
+    static let BASE_URL         = "https://v2msoft.com/clientes/lasalle/ios-17-18/";
+    
+    static let FUNC_LOGIN       = "login.php";
+    
+    static let FUNC_APARTMENTS  = "apartments.php";
     
     static func getWebServiceURL(function: String) -> String {
         
         return BASE_URL + function;
+    }
+    
+    static func setToken(tkn: String) {
+        
+        token = tkn;
+    }
+    
+    static func getToken() -> String? {
+        
+        return token;
     }
 }

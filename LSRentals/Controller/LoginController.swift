@@ -64,6 +64,8 @@ class LoginController: UIViewController, RequestProtocol {
                     
                     UserConfig.rememberUser(login: self.loginText.text!, token: tkn!);
                 }
+                
+                self.performSegue(withIdentifier: "login_success", sender: self);
             }
         }
         else {  // an error happened with the data provided by the user

@@ -584,7 +584,7 @@
                         <outlet property="loginText" destination="nd2-iW-oGw" id="VgG-qh-VMp"/>
                         <outlet property="passText" destination="mZg-rK-BjA" id="EZb-5z-1px"/>
                         <outlet property="remember" destination="cgv-7T-nmL" id="gLz-Rz-IRk"/>
-                        <segue destination="sGh-Xc-jF0" kind="showDetail" id="g2N-vy-yRD"/>
+                        <segue destination="sGh-Xc-jF0" kind="show" identifier="login_success" action="showDetailViewController:sender:" id="g2N-vy-yRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSq-vd-tNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -598,7 +598,7 @@
         <image name="map" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZDB-8y-y0y"/>
+        <segue reference="g2N-vy-yRD"/>
         <segue reference="fSD-pR-WMX"/>
     </inferredMetricsTieBreakers>
 </document>
