@@ -14,7 +14,6 @@ class LoginController: UIViewController, RequestProtocol {
     @IBOutlet private weak var loginText: UITextField!;
     @IBOutlet private weak var passText: UITextField!;
     
-    @IBOutlet private weak var remember: UISwitch!;
     
     @IBAction private func onLoginPressed() {
         
