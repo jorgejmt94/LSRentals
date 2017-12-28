@@ -484,7 +484,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="t51-Gu-AX1" id="tXO-mm-xXG"/>
-                        <outlet property="switchButton" destination="ulP-58-bYh" id="vlo-hk-ko9"/>
                         <segue destination="X6B-AH-lHh" kind="show" identifier="ApartamentDetails" id="hCl-RA-jvT"/>
                     </connections>
                 </viewController>
