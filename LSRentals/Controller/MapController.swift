@@ -17,10 +17,7 @@ class MapController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-        //let searchBar = UISearchBar();
-        searchBar.delegate = self;
         mapView.delegate = self;
-        self.navigationItem.titleView = searchBar;
         
         //TODO: peticio apartaments
         let singleton = Singleton.getInstance();
