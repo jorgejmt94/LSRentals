@@ -12,7 +12,7 @@ import UIKit
 import MapKit
 import Alamofire
 
-class TableController : UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class TableController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var switchButton: UISwitch!
     @IBOutlet weak var tableView: UITableView!

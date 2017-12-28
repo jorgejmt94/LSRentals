@@ -411,6 +411,8 @@
                         <outlet property="apartmentAddressLabel" destination="6Gc-cF-iFR" id="WlZ-rl-xIh"/>
                         <outlet property="apartmentCapacityLabel" destination="fvs-r6-mrG" id="Gbw-Tf-Jvt"/>
                         <outlet property="apartmentNameLabel" destination="OzX-fW-0i8" id="swQ-Hj-jAv"/>
+                        <outlet property="imageCollection" destination="4wc-0h-ao9" id="nid-6r-Fmf"/>
+                        <outlet property="mapView" destination="Ol4-4M-KTK" id="h7S-pw-EJC"/>
                         <segue destination="Hft-g8-KEO" kind="show" identifier="Rent" id="c2Z-ve-rze"/>
                     </connections>
                 </viewController>

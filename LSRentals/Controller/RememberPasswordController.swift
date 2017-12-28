@@ -56,7 +56,7 @@ class RememberPasswordController: UIViewController, RequestProtocol {
         
         if success == 1 {   // request was OK
             
-            //TODO: NO VA Y  send mail y ponerlo en el textfield
+            //TODO: NO VA y  enviar mail y ponerlo en el textfield
             self.performSegue(withIdentifier: "PasswordRemembered", sender: self);
         }
         else {  // an error happened with the data provided by the user
