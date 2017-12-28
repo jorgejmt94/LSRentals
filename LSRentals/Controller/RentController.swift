@@ -22,6 +22,7 @@ class RentController: UIViewController {
     @IBOutlet weak var numberOfPeople: UITextField!
     
     var aparmentId: Int!;
+    private let singleton = Singleton.getInstance();
     
     
     @IBAction func stepperChanged(_ sender: Any) {
@@ -30,11 +31,14 @@ class RentController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
+        
+        let apartment = singleton.getApartment(key: self.aparmentId);
+        self.apartmentNameLabel.text = apartment!.name;
+        self.apartmentAddressLabel.text = apartment!.location.address;
+        
         stepper.autorepeat = true;
         stepper.minimumValue = 0;
-        stepper.maximumValue = 15;
         numberOfPeople.isUserInteractionEnabled = false;
-        //TODO: cargar info apartament
     }
     
     @IBAction func cancelButton(_ sender: Any) {
@@ -48,12 +52,15 @@ class RentController: UIViewController {
         print("on rent button");
         let dateFormatter = DateFormatter();
         dateFormatter.dateFormat = "YYYY-MM-dd";
+        var userName: String;
+        userName = self.name.text! + " " + self.surname.text!;
         
         let parameters: Parameters = [
         
             "apartment": aparmentId,
             "customer": [
-                "name": UserConfig.getRememberUserName(),
+                //"name": UserConfig.getRememberUserName(),
+                "name": userName,
                 "start_date": dateFormatter.string(from: dateIn!.date),
                 "end_date": dateFormatter.string(from: dateOut!.date),
                 "number_of_people": Int(stepper.value)
