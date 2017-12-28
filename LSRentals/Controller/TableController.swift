@@ -12,7 +12,7 @@ import UIKit
 import MapKit
 import Alamofire
 
-class TableController : UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class TableController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var switchButton: UISwitch!
     @IBOutlet weak var tableView: UITableView!
@@ -29,8 +29,22 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
     }
+    
+    @IBAction func logOutButton(_ sender: Any) {
+        
+        UserConfig.deleteUser();
+        self.navigationController?.popViewController(animated: true);
+        //  TODO no va del tot be
+    }
+    
+    
     @IBAction func stepperChanged(_ sender: Any) {
         capacity.text = Int(stepper.value).description;
+        tableView.reloadData();
+    }
+    
+    @IBAction func switchButtonChanged(_ sender: Any) {
+        tableView.reloadData();
     }
     
     override func viewDidLoad() {
@@ -61,13 +75,6 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
 
-    @IBAction func logOutButton(_ sender: Any) {
-        
-        UserConfig.deleteUser();
-        self.navigationController?.popViewController(animated: true);
-        //  TODO no va del tot be
-    }
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Apartments";
     }
@@ -82,15 +89,23 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         return keys.count;
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cellIdentifier");
         
         let apartment = singleton.getApartment(key: keys[indexPath.row]);
-        
-        if apartment != nil {
-            
-            cell.textLabel!.text = "name: \(apartment!.name)";
+        if switchButton.isOn {
+            if apartment != nil && apartment!.maxCapacity >= Int(capacity.text!)! && apartment!.available == true  {
+                
+                cell.textLabel!.text = "name: \(apartment!.name)";
+            }
+        }else{
+            if apartment != nil && apartment!.maxCapacity >= Int(capacity.text!)!  {
+                
+                cell.textLabel!.text = "name: \(apartment!.name)";
+            }
         }
+        
         return cell;
     }
     

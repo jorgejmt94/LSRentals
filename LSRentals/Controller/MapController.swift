@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class MapController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
+class MapController: UIViewController, MKMapViewDelegate{
 
     @IBOutlet weak var mapView: MKMapView!;
 

@@ -22,6 +22,7 @@ class RentController: UIViewController {
     @IBOutlet weak var numberOfPeople: UITextField!
     
     var aparmentId: Int!;
+    private let singleton = Singleton.getInstance();
     
     
     @IBAction func stepperChanged(_ sender: Any) {
@@ -30,49 +31,110 @@ class RentController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
+        
+        //fill labels
+        let apartment = singleton.getApartment(key: self.aparmentId);
+        self.apartmentNameLabel.text = apartment!.name;
+        self.apartmentAddressLabel.text = apartment!.location.address;
+        
+        //details for stepper
         stepper.autorepeat = true;
         stepper.minimumValue = 0;
-        stepper.maximumValue = 15;
         numberOfPeople.isUserInteractionEnabled = false;
-        //TODO: cargar info apartament
     }
     
     @IBAction func cancelButton(_ sender: Any) {
-        
+        //return previous view
         self.navigationController?.popViewController(animated: true);
+    }
+    
+    private func showAlertMsg(message: String){
+        self.showDefaultAlertDialog(title: "Rent error", msg: message, buttonTitle: "Accept");
+    }
+    
+    /**
+    *
+    *   Check all data is correct
+    *
+    **/
+    private func checkData() -> Bool{
+        var dataOk: Bool;
+        dataOk = true;
+        
+        if self.name.text!.isEmpty || self.surname.text!.isEmpty{
+            showAlertMsg(message: "The name and surname fields can't be empty.");
+            return false;
+        }
+
+        //compare without hours
+        if Date(timeIntervalSinceNow: -10000) > dateIn!.date{
+            showAlertMsg(message: "The date in can not be from the past.");
+            return false;
+        }
+        
+        if dateOut!.date == dateIn!.date{
+            showAlertMsg(message: "The date out can't be equal than date in.");
+            return false;
+        }
+        
+        if dateOut!.date < dateIn!.date{
+            showAlertMsg(message: "The date out can't be before the date in.");
+            return false;
+        }
+        
+        
+        if Int(stepper.value) == 0{
+            showAlertMsg(message: "Capacity mut be greater than 0.");
+            return false;
+        }
+        
+        let apartment = singleton.getApartment(key: self.aparmentId);
+        if Int(stepper.value) > apartment!.maxCapacity{
+            showAlertMsg(message: "This apartment does not have as much capacity.");
+            return false;
+        }
+        
+        return dataOk;
     }
     
     @IBAction func rentButton(_ sender: Any) {
         //TODO: enviar reserva
-        
+        var dataOk: Bool;
         print("on rent button");
         let dateFormatter = DateFormatter();
         dateFormatter.dateFormat = "YYYY-MM-dd";
+        var userName: String;
+        userName = self.name.text! + " " + self.surname.text!;
+        dataOk = checkData();
         
-        let parameters: Parameters = [
-        
-            "apartment": aparmentId,
-            "customer": [
-                "name": UserConfig.getRememberUserName(),
-                "start_date": dateFormatter.string(from: dateIn!.date),
-                "end_date": dateFormatter.string(from: dateOut!.date),
-                "number_of_people": Int(stepper.value)
+        if dataOk {
+            let parameters: Parameters = [
+                
+                "apartment": aparmentId,
+                "customer": [
+                    //"name": UserConfig.getRememberUserName(),
+                    "name": userName,
+                    "start_date": dateFormatter.string(from: dateIn!.date),
+                    "end_date": dateFormatter.string(from: dateOut!.date),
+                    "number_of_people": Int(stepper.value)
+                ]
+            ];
+            
+            let headers: HTTPHeaders = [
+                "Authorization": "Basic \(WSRentals.getToken()!)",
             ]
-        ];
-        
-        let headers: HTTPHeaders = [
-            "Authorization": "Basic \(WSRentals.getToken()!)",
-        ]
-        
-        Alamofire.request(WSRentals.getWebServiceURL(function: WSRentals.FUNC_BOOK),
-                          method: .get,
-                          parameters: parameters,
-                          encoding: URLEncoding.default,
-                          headers: headers).validate(statusCode: 200..<300)
-            .responseJSON { response in
-
-                self.onRequestResponse(response: response)
+            
+            Alamofire.request(WSRentals.getWebServiceURL(function: WSRentals.FUNC_BOOK),
+                              method: .get,
+                              parameters: parameters,
+                              encoding: URLEncoding.default,
+                              headers: headers).validate(statusCode: 200..<300)
+                .responseJSON { response in
+                    
+                    self.onRequestResponse(response: response)
+            }
         }
+
     }
     
     private func onRequestResponse(response: DataResponse<Any>) {

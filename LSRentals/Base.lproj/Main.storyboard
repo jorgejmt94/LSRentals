@@ -411,6 +411,8 @@
                         <outlet property="apartmentAddressLabel" destination="6Gc-cF-iFR" id="WlZ-rl-xIh"/>
                         <outlet property="apartmentCapacityLabel" destination="fvs-r6-mrG" id="Gbw-Tf-Jvt"/>
                         <outlet property="apartmentNameLabel" destination="OzX-fW-0i8" id="swQ-Hj-jAv"/>
+                        <outlet property="imageCollection" destination="4wc-0h-ao9" id="nid-6r-Fmf"/>
+                        <outlet property="mapView" destination="Ol4-4M-KTK" id="h7S-pw-EJC"/>
                         <segue destination="Hft-g8-KEO" kind="show" identifier="Rent" id="c2Z-ve-rze"/>
                     </connections>
                 </viewController>
@@ -484,7 +486,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="t51-Gu-AX1" id="tXO-mm-xXG"/>
-                        <outlet property="switchButton" destination="ulP-58-bYh" id="vlo-hk-ko9"/>
                         <segue destination="X6B-AH-lHh" kind="show" identifier="ApartamentDetails" id="hCl-RA-jvT"/>
                     </connections>
                 </viewController>
@@ -505,6 +506,9 @@
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xa9-Du-F14">
                                         <rect key="frame" x="321" y="3" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchButtonChanged:" destination="krj-bG-vcA" eventType="valueChanged" id="rbw-rV-N90"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MR7-oB-Vug">
                                         <rect key="frame" x="245" y="12" width="73" height="13.5"/>

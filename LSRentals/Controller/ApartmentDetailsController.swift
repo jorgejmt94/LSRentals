@@ -9,27 +9,55 @@ import Foundation
 import UIKit
 import MapKit
 
-class ApartmentDetailsController: UIViewController {
+class ApartmentDetailsController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var apartmentNameLabel: UILabel!
     @IBOutlet weak var apartmentAddressLabel: UILabel!
     @IBOutlet weak var apartmentCapacityLabel: UILabel!
-    public var apartmentIdSegue: Int!;
+    
     private let singleton = Singleton.getInstance();
+    public var apartmentIdSegue: Int!;
+
+    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var imageCollection: UICollectionView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
+        //fill info to labels
         let apartment = singleton.getApartment(key: self.apartmentIdSegue);
         self.apartmentNameLabel.text = apartment!.name;
         self.apartmentAddressLabel.text = apartment!.location.address;
         self.apartmentCapacityLabel.text = String(apartment!.maxCapacity);
         
+        //print map
+        for point in singleton.getMapPoints() {
+            if point.id == self.apartmentIdSegue {
+                mapView.addAnnotation(point);
+            }
+        }
+        let initialLocation = CLLocation(latitude: 41.373131, longitude: 2.1401831);
+        // center the map to barcelona
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate,
+                                                                  50000, 50000);
+        mapView.setRegion(coordinateRegion, animated: true);
         
-        //TODO: cargar info apartament        
+        
+    }
+
+    
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "sharedIdentifier");
+        
+        annotationView.canShowCallout = true;
+        annotationView.pinTintColor = MKPinAnnotationView.redPinColor();
+        
+        return annotationView;
     }
     
     
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "Rent" {
@@ -42,12 +70,5 @@ class ApartmentDetailsController: UIViewController {
     @IBAction func rentButton(_ sender: Any) {
         self.performSegue(withIdentifier: "Rent", sender: self);
     }
-    
-    
-    /*@IBAction func backButton(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true);
-
-    }*/
-    
     
 }
