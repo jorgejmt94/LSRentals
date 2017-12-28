@@ -52,21 +52,33 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.reloadData();
     }
     
+    private func testCapacity(apCapacity: Int) -> Bool {
+        
+        if (capacity.text?.isEmpty)! {
+            return true;
+        }
+        
+        return apCapacity >= Int(capacity.text!)!;
+    }
+    
+    private func testAvailable(available: Bool) -> Bool {
+        
+        if !switchButton.isOn {
+            return true;
+        }
+        
+        return available == true;
+    }
+    
     private func filter() {
         
         currentKeys.removeAll();
-        
-        if !switchButton.isOn {
-            
-            self.currentKeys = keys;
-            return;
-        }
-        
+
         for key in keys {
             
             let apartment = singleton.getApartment(key: key);
             
-            if (apartment?.maxCapacity)! >= Int(capacity.text!)! && apartment?.available == true {
+            if (testCapacity(apCapacity: (apartment?.maxCapacity)!) == true && testAvailable(available: (apartment?.available)!)){
                 
                 currentKeys.append((apartment?.identifier)!);
             }
@@ -76,6 +88,7 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad();
         
+        capacity.isUserInteractionEnabled = false;
         let headers: HTTPHeaders = [
             "Authorization": "Basic \(WSRentals.getToken()!)",
         ]
