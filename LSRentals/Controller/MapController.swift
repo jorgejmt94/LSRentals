@@ -13,10 +13,12 @@ class MapController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
     @IBOutlet weak var switchButton: UISwitch!
 
     @IBOutlet weak var mapView: MKMapView!;
+    private let searchBar = UISearchBar();
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-        let searchBar = UISearchBar();
+        //let searchBar = UISearchBar();
         searchBar.delegate = self
         self.navigationItem.titleView = searchBar;
         

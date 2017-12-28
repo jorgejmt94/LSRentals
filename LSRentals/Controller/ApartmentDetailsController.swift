@@ -14,12 +14,19 @@ class ApartmentDetailsController: UIViewController {
     @IBOutlet weak var apartmentNameLabel: UILabel!
     @IBOutlet weak var apartmentAddressLabel: UILabel!
     @IBOutlet weak var apartmentCapacityLabel: UILabel!
+    public var apartmentIdSegue: Int!;
+    private let singleton = Singleton.getInstance();
     
     var apartmentId: Int?;
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
+        let apartment = singleton.getApartment(key: self.apartmentIdSegue);
+        self.apartmentNameLabel.text = apartment!.name;
+        self.apartmentAddressLabel.text = apartment!.location.address;
+        self.apartmentCapacityLabel.text = String(apartment!.maxCapacity);
+        
         
         //TODO: cargar info apartament
         

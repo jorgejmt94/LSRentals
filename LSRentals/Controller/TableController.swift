@@ -22,13 +22,14 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     private var selectedCell: Int!;
 
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
     }
     
     override func viewDidLoad() {
         super.viewDidLoad();
-        let searchBar = UISearchBar();
         searchBar.delegate = self
         self.navigationItem.titleView = searchBar;
 
@@ -65,13 +66,11 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         return "Apartments";
     }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1;
     }
     
@@ -105,6 +104,8 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Cell selected: \(indexPath.row)");
         
+        let apartment = singleton.getApartment(key: keys[indexPath.row]);
+        self.idSegue = apartment!.identifier;
         //TODO: peticio dels detalls de l'apartament per enviar a la seguent
         
         selectedCell = indexPath.row;
