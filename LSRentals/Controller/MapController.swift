@@ -10,10 +10,8 @@ import UIKit
 import MapKit
 
 class MapController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
-    @IBOutlet weak var switchButton: UISwitch!
 
     @IBOutlet weak var mapView: MKMapView!;
-    private let searchBar = UISearchBar();
 
     private var pointId: Int?;
     
