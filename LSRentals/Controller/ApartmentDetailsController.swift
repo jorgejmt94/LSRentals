@@ -17,9 +17,6 @@ class ApartmentDetailsController: UIViewController {
     public var apartmentIdSegue: Int!;
     private let singleton = Singleton.getInstance();
     
-    var apartmentId: Int?;
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         let apartment = singleton.getApartment(key: self.apartmentIdSegue);
@@ -28,13 +25,20 @@ class ApartmentDetailsController: UIViewController {
         self.apartmentCapacityLabel.text = String(apartment!.maxCapacity);
         
         
-        //TODO: cargar info apartament
-        
-        print("Apartment id: \(apartmentId)");
+        //TODO: cargar info apartament        
     }
     
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "Rent" {
+            
+            let nextView = segue.destination as? RentController;
+            nextView?.aparmentId = apartmentIdSegue;
+        }
+    }
+    
     @IBAction func rentButton(_ sender: Any) {
         self.performSegue(withIdentifier: "Rent", sender: self);
     }

@@ -19,9 +19,8 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     private var keys = [Int]();
     private let singleton = Singleton.getInstance();
-    
-    private var selectedCell: Int!;
-
+    private let searchBar = UISearchBar();
+    private var idSegue = 0;
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,24 +91,23 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
-        if segue.identifier == "ApartamentDetailsController" {
+        if(segue.identifier == "ApartamentDetails"){
             
-            let nextView = segue.destination as? ApartmentDetailsController;
-            nextView?.apartmentId = keys[selectedCell];
+            let apartmentDetails = segue.destination as? ApartmentDetailsController;
+            apartmentDetails!.apartmentIdSegue = self.idSegue;
         }
     }
-  
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Cell selected: \(indexPath.row)");
         
         let apartment = singleton.getApartment(key: keys[indexPath.row]);
         self.idSegue = apartment!.identifier;
         //TODO: peticio dels detalls de l'apartament per enviar a la seguent
-        
-        selectedCell = indexPath.row;
-        self.performSegue(withIdentifier: "ApartamentDetailsController", sender: self);
+        self.performSegue(withIdentifier: "ApartamentDetails", sender: self);        
     }
     
     

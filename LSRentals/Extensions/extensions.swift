@@ -19,6 +19,15 @@ extension UIViewController {
         
         self.present(alert, animated: true, completion: nil);
     }
+    
+    public func showDefaultAlertDialog(title: String, msg: String, action: UIAlertAction) {
+        
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert);
+        
+        alert.addAction(action);
+        
+        self.present(alert, animated: true, completion: nil);
+    }
 }
 
 // TODO: extension of class String to verify email address format
