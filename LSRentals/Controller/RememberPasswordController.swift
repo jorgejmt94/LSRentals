@@ -44,7 +44,7 @@ class RememberPasswordController: UIViewController, RequestProtocol {
     func getParameters() -> ([String : Any]) {
         
         let params : [String: String] = [
-            "mail": mailText.text!
+            "username": mailText.text!
         ];
         
         return params;
@@ -56,12 +56,21 @@ class RememberPasswordController: UIViewController, RequestProtocol {
         
         if success == 1 {   // request was OK
             
-            //TODO: NO VA y  enviar mail y ponerlo en el textfield
-            self.performSegue(withIdentifier: "PasswordRemembered", sender: self);
+            DispatchQueue.main.async {
+
+                let password = responseData["password"] as? String;
+                let alertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.default) { UIAlertAction in
+                    
+                    self.performSegue(withIdentifier: "PasswordRemembered", sender: self);
+                }            //TODO: NO VA y  enviar mail y ponerlo en el textfield
+                self.showDefaultAlertDialog(title: "Password recovered", msg: "Your password was \(password!)", action: alertAction);
+            }
         }
         else {  // an error happened with the data provided by the user
+            let error = responseData["error"] as? String;
+
             DispatchQueue.main.async {
-                self.showDefaultAlertDialog(title: "Authentication error", msg: "The email is incorrect. Please, try again.", buttonTitle: "Accept");
+                self.showDefaultAlertDialog(title: "Authentication error", msg: "\(error!)", buttonTitle: "Accept");
             }
         }
     }
