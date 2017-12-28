@@ -20,7 +20,10 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     private var keys = [Int]();
     private let singleton = Singleton.getInstance();
     private let searchBar = UISearchBar();
+    private var idSegue = 0;
 
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
     }
@@ -63,13 +66,11 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         return "Apartments";
     }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1;
     }
     
@@ -90,11 +91,24 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell;
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        if(segue.identifier == "ApartamentDetails"){
+            
+            let apartmentDetails = segue.destination as? ApartmentDetailsController;
+            apartmentDetails!.apartmentIdSegue = self.idSegue;
+        }
+    }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Cell selected: \(indexPath.row)");
         
+        let apartment = singleton.getApartment(key: keys[indexPath.row]);
+        self.idSegue = apartment!.identifier;
         //TODO: peticio dels detalls de l'apartament per enviar a la seguent
-        self.performSegue(withIdentifier: "ApartamentDetailsController", sender: self);
+        self.performSegue(withIdentifier: "ApartamentDetails", sender: self);
         
         tableView.reloadData();
     }
