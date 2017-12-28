@@ -21,7 +21,9 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var capacity: UITextField!
     
     
-    private var keys = [Int]();
+    private var keys = [Int]();         // all keys
+    private var currentKeys = [Int]();  // filtered keys
+    
     private let singleton = Singleton.getInstance();
     private var idSegue = 0;
     
@@ -37,14 +39,38 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         //  TODO no va del tot be
     }
     
-    
     @IBAction func stepperChanged(_ sender: Any) {
         capacity.text = Int(stepper.value).description;
+        
+        filter();
         tableView.reloadData();
     }
     
     @IBAction func switchButtonChanged(_ sender: Any) {
+        
+        filter();
         tableView.reloadData();
+    }
+    
+    private func filter() {
+        
+        currentKeys.removeAll();
+        
+        if !switchButton.isOn {
+            
+            self.currentKeys = keys;
+            return;
+        }
+        
+        for key in keys {
+            
+            let apartment = singleton.getApartment(key: key);
+            
+            if (apartment?.maxCapacity)! >= Int(capacity.text!)! && apartment?.available == true {
+                
+                currentKeys.append((apartment?.identifier)!);
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -86,26 +112,17 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return keys.count;
+        return currentKeys.count;
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cellIdentifier");
         
-        let apartment = singleton.getApartment(key: keys[indexPath.row]);
-        if switchButton.isOn {
-            if apartment != nil && apartment!.maxCapacity >= Int(capacity.text!)! && apartment!.available == true  {
-                
-                cell.textLabel!.text = "name: \(apartment!.name)";
-            }
-        }else{
-            if apartment != nil && apartment!.maxCapacity >= Int(capacity.text!)!  {
-                
-                cell.textLabel!.text = "name: \(apartment!.name)";
-            }
-        }
-        
+        let apartment = singleton.getApartment(key: currentKeys[indexPath.row]);
+     
+        cell.textLabel!.text = "name: \(apartment!.name)";
+
         return cell;
     }
     
@@ -123,7 +140,7 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Cell selected: \(indexPath.row)");
         
-        let apartment = singleton.getApartment(key: keys[indexPath.row]);
+        let apartment = singleton.getApartment(key: currentKeys[indexPath.row]);
         self.idSegue = apartment!.identifier;
         //TODO: peticio dels detalls de l'apartament per enviar a la seguent
         self.performSegue(withIdentifier: "ApartamentDetails", sender: self);        
@@ -177,6 +194,7 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         singleton.setApartments(apartments);
         singleton.setMapPoints(mapPoints);
         self.keys = Array(apartments.keys);
+        self.currentKeys = Array(apartments.keys);
         tableView.reloadData();
         print("count on tab: \(apartments.count)");
     }
