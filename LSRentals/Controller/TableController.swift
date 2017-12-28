@@ -17,21 +17,25 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var switchButton: UISwitch!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var capacity: UITextField!
+    
+    
     private var keys = [Int]();
     private let singleton = Singleton.getInstance();
-    private let searchBar = UISearchBar();
     private var idSegue = 0;
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
     }
+    @IBAction func stepperChanged(_ sender: Any) {
+        capacity.text = Int(stepper.value).description;
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad();
-        searchBar.delegate = self
-        self.navigationItem.titleView = searchBar;
-
+        
         let headers: HTTPHeaders = [
             "Authorization": "Basic \(WSRentals.getToken()!)",
         ]
