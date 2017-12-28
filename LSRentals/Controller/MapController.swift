@@ -43,6 +43,7 @@ class MapController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
     @IBAction func logOutButton(_ sender: Any) {
 
         UserConfig.deleteUser();
+        //  TODO no va del tot be
         self.navigationController?.popViewController(animated: true);
 
     }

@@ -59,6 +59,7 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         
         UserConfig.deleteUser();
         self.navigationController?.popViewController(animated: true);
+        //  TODO no va del tot be
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
