@@ -19,6 +19,8 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     private var keys = [Int]();
     private let singleton = Singleton.getInstance();
+    
+    private var selectedCell: Int!;
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
@@ -90,17 +92,24 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell;
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ApartamentDetailsController" {
+            
+            let nextView = segue.destination as? ApartmentDetailsController;
+            nextView?.apartmentId = keys[selectedCell];
+        }
+    }
+  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Cell selected: \(indexPath.row)");
         
         //TODO: peticio dels detalls de l'apartament per enviar a la seguent
-        self.performSegue(withIdentifier: "ApartamentDetailsController", sender: self);
         
-        tableView.reloadData();
+        selectedCell = indexPath.row;
+        self.performSegue(withIdentifier: "ApartamentDetailsController", sender: self);
     }
-    
-    
-    
     
     
     // horrible

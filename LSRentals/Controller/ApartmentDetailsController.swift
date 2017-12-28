@@ -15,11 +15,15 @@ class ApartmentDetailsController: UIViewController {
     @IBOutlet weak var apartmentAddressLabel: UILabel!
     @IBOutlet weak var apartmentCapacityLabel: UILabel!
     
+    var apartmentId: Int?;
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         //TODO: cargar info apartament
+        
+        print("Apartment id: \(apartmentId)");
     }
     
     
