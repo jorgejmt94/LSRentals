@@ -14,6 +14,14 @@ class LoginController: UIViewController, RequestProtocol {
     @IBOutlet private weak var loginText: UITextField!;
     @IBOutlet private weak var passText: UITextField!;
     
+    public var valueToSendOnSegue: String!;
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        passText.text = valueToSendOnSegue
+    }
+    
     @IBAction private func onLoginPressed() {
         
         // TODO: validate parameters
@@ -37,6 +45,8 @@ class LoginController: UIViewController, RequestProtocol {
             }
         }
     }
+    
+
 
     func getParameters() -> ([String : Any]) {
         

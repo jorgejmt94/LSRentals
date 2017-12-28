@@ -88,19 +88,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBA-3E-mBy">
-                                <rect key="frame" x="20" y="30" width="62" height="21"/>
+                                <rect key="frame" x="20" y="74" width="62" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección del apartamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58M-v9-x1g">
-                                <rect key="frame" x="20" y="56" width="203" height="21"/>
+                                <rect key="frame" x="20" y="100" width="203" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahR-EC-C1u">
-                                <rect key="frame" x="0.0" y="82" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="126" width="375" height="45"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="eyB-8G-aQg">
                                         <rect key="frame" x="20" y="5" width="125" height="30"/>
@@ -131,12 +131,12 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmu-k3-cbH">
-                                <rect key="frame" x="40" y="373" width="295" height="25"/>
+                                <rect key="frame" x="40" y="417" width="295" height="25"/>
                                 <color key="backgroundColor" red="0.43796333630000001" green="0.67448586880000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="OPW-Rb-ixz"/>
                                 </constraints>
-                                <state key="normal" title="Rental">
+                                <state key="normal" title="Rent">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -144,7 +144,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKk-N2-Ovs">
-                                <rect key="frame" x="0.0" y="128" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="172" width="375" height="90"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bpl-2p-Kpu">
                                         <rect key="frame" x="69" y="5" width="301" height="80"/>
@@ -172,7 +172,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFZ-yY-lcg">
-                                <rect key="frame" x="0.0" y="223" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="267" width="375" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgz-BH-08q">
                                         <rect key="frame" x="10" y="50" width="66" height="21"/>
@@ -200,7 +200,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28T-uF-KyA">
-                                <rect key="frame" x="10" y="318" width="360" height="40"/>
+                                <rect key="frame" x="10" y="362" width="360" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of people" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oh-E1-QeU">
                                         <rect key="frame" x="10" y="15" width="124" height="18"/>
@@ -208,17 +208,20 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zo6-tc-adN">
-                                        <rect key="frame" x="137" y="10" width="30" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zo6-tc-adN">
+                                        <rect key="frame" x="137" y="10" width="40" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="UzS-3f-cJ4"/>
+                                            <constraint firstAttribute="width" constant="40" id="UzS-3f-cJ4"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="vW7-Bq-M54">
-                                        <rect key="frame" x="177" y="10" width="94" height="29"/>
+                                        <rect key="frame" x="187" y="10" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="stepperChanged:" destination="Hft-g8-KEO" eventType="valueChanged" id="u83-90-JMP"/>
+                                        </connections>
                                     </stepper>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -233,7 +236,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-u6-kIu">
-                                <rect key="frame" x="40" y="408" width="295" height="25"/>
+                                <rect key="frame" x="40" y="452" width="295" height="25"/>
                                 <color key="backgroundColor" red="0.43796333630000001" green="0.67448586880000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="KSE-m2-p9D"/>
@@ -276,12 +279,17 @@
                     <connections>
                         <outlet property="apartmentAddressLabel" destination="58M-v9-x1g" id="gGy-0a-fnL"/>
                         <outlet property="apartmentNameLabel" destination="uBA-3E-mBy" id="xHh-yU-w7q"/>
-                        <segue destination="sGh-Xc-jF0" kind="show" id="L3m-pl-Ww4"/>
+                        <outlet property="dateIn" destination="Bpl-2p-Kpu" id="AOg-6g-ir0"/>
+                        <outlet property="dateOut" destination="hhu-BB-xAY" id="1B1-8m-O6R"/>
+                        <outlet property="name" destination="eyB-8G-aQg" id="9nV-fG-KmE"/>
+                        <outlet property="numberOfPeople" destination="Zo6-tc-adN" id="Jxl-HJ-3BA"/>
+                        <outlet property="stepper" destination="vW7-Bq-M54" id="Rgv-na-DbT"/>
+                        <outlet property="surname" destination="4Gl-2i-BzW" id="t1f-xg-DTf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6M2-Yh-8dV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6535" y="-884"/>
+            <point key="canvasLocation" x="6601" y="-114"/>
         </scene>
         <!--Apartment Details Controller-->
         <scene sceneID="dCY-io-kwn">
@@ -370,7 +378,7 @@
                         <outlet property="apartmentAddressLabel" destination="6Gc-cF-iFR" id="WlZ-rl-xIh"/>
                         <outlet property="apartmentCapacityLabel" destination="fvs-r6-mrG" id="Gbw-Tf-Jvt"/>
                         <outlet property="apartmentNameLabel" destination="OzX-fW-0i8" id="swQ-Hj-jAv"/>
-                        <segue destination="Hft-g8-KEO" kind="show" identifier="RentController" id="c2Z-ve-rze"/>
+                        <segue destination="Hft-g8-KEO" kind="show" identifier="Rent" id="c2Z-ve-rze"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8S-aW-mcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -388,7 +396,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAl-UE-5ZL">
                                 <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                                 <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ulP-58-bYh">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ulP-58-bYh">
                                         <rect key="frame" x="324" y="62" width="51" height="31"/>
                                     </switch>
                                     <searchBar alpha="0.5" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ig6-3k-G9l">
@@ -755,7 +763,7 @@
                         <viewLayoutGuide key="safeArea" id="VxA-a2-Aie"/>
                     </view>
                     <connections>
-                        <outlet property="mailLabel" destination="MVl-Xj-DiK" id="Os9-Qj-hkX"/>
+                        <outlet property="mailText" destination="MVl-Xj-DiK" id="m7R-Wz-yHf"/>
                         <segue destination="hna-8c-9Wo" kind="show" identifier="PasswordRemembered" id="nuO-HA-4gu"/>
                     </connections>
                 </viewController>
@@ -771,9 +779,8 @@
         <image name="map" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c2Z-ve-rze"/>
-        <segue reference="P5R-aJ-tKI"/>
-        <segue reference="L3m-pl-Ww4"/>
-        <segue reference="fSD-pR-WMX"/>
+        <segue reference="nuO-HA-4gu"/>
+        <segue reference="g2N-vy-yRD"/>
+        <segue reference="VkK-vO-uoZ"/>
     </inferredMetricsTieBreakers>
 </document>

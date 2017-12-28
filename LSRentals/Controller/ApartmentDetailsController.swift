@@ -25,11 +25,13 @@ class ApartmentDetailsController: UIViewController {
     
 
     @IBAction func rentButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "RentController", sender: self);
+        self.performSegue(withIdentifier: "Rent", sender: self);
     }
+    
     
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true);
+
     }
     
     
