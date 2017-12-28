@@ -484,7 +484,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="t51-Gu-AX1" id="tXO-mm-xXG"/>
-                        <segue destination="X6B-AH-lHh" kind="show" identifier="ApartamentDetailsController" id="hCl-RA-jvT"/>
+                        <outlet property="switchButton" destination="ulP-58-bYh" id="vlo-hk-ko9"/>
+                        <segue destination="X6B-AH-lHh" kind="show" identifier="ApartamentDetails" id="hCl-RA-jvT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erZ-ZX-jJH" userLabel="First Responder" sceneMemberID="firstResponder"/>

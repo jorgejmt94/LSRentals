@@ -13,10 +13,14 @@ class MapController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var mapView: MKMapView!;
 
+    private var pointId: Int?;
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-
+        //let searchBar = UISearchBar();
+        searchBar.delegate = self;
+        mapView.delegate = self;
+        self.navigationItem.titleView = searchBar;
         
         //TODO: peticio apartaments
         let singleton = Singleton.getInstance();
@@ -25,7 +29,14 @@ class MapController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
             
             mapView.addAnnotation(point);
         }
+        
+        let initialLocation = CLLocation(latitude: 41.373131, longitude: 2.1401831);
+        // center the map to barcelona
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate,
+                                                                  50000, 50000);
+        mapView.setRegion(coordinateRegion, animated: true);
     }
+
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
@@ -37,6 +48,18 @@ class MapController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
         return annotationView;
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        let point = view.annotation as? MapAnnotation;
+        pointId = point?.id;
+        self.performSegue(withIdentifier: "ApartamentDetails", sender: self);
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let nextView = segue.destination as? ApartmentDetailsController;
+        nextView?.apartmentIdSegue = pointId;
+    }
     
     @IBAction func logOutButton(_ sender: Any) {
 

@@ -11,11 +11,15 @@ import MapKit
 
 class MapAnnotation: MKPointAnnotation {
     
-    init(coordinate: CLLocationCoordinate2D, title: String, info: String) {
+    var id: Int?;
+    
+    init(coordinate: CLLocationCoordinate2D, title: String, info: String, id: Int) {
         super.init();
         
         super.coordinate    = coordinate;
         super.title         = title;
         super.subtitle      = info;
+        self.id             = id;
     }
+
 }

@@ -169,7 +169,7 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
             );
             
             apartments[current.identifier] = current;
-            let point = MapAnnotation(coordinate: CLLocationCoordinate2DMake(location.latitude, location.longitude), title: current.name, info: current.info);
+            let point = MapAnnotation(coordinate: CLLocationCoordinate2DMake(location.latitude, location.longitude), title: current.name, info: current.info, id: current.identifier);
             mapPoints.append(point);
         }
         
