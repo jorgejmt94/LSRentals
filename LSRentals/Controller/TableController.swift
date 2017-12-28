@@ -12,7 +12,7 @@ import UIKit
 import MapKit
 import Alamofire
 
-class TableController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TableController : UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var switchButton: UISwitch!
     @IBOutlet weak var tableView: UITableView!
@@ -26,7 +26,10 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad();
-    
+        let searchBar = UISearchBar();
+        searchBar.delegate = self
+        self.navigationItem.titleView = searchBar;
+
         let headers: HTTPHeaders = [
             "Authorization": "Basic \(WSRentals.getToken()!)",
         ]
@@ -55,8 +58,7 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBAction func logOutButton(_ sender: Any) {
         
         UserConfig.deleteUser();
-        self.performSegue(withIdentifier: "LogOut", sender: self);
-
+        self.navigationController?.popViewController(animated: true);
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
