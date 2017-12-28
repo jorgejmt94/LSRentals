@@ -19,6 +19,7 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     private var keys = [Int]();
     private let singleton = Singleton.getInstance();
+    private let searchBar = UISearchBar();
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
@@ -26,7 +27,6 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad();
-        let searchBar = UISearchBar();
         searchBar.delegate = self
         self.navigationItem.titleView = searchBar;
 
