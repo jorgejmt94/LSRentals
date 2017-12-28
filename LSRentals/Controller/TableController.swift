@@ -21,7 +21,6 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     private let singleton = Singleton.getInstance();
     private let searchBar = UISearchBar();
     private var idSegue = 0;
-
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,13 +107,8 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         let apartment = singleton.getApartment(key: keys[indexPath.row]);
         self.idSegue = apartment!.identifier;
         //TODO: peticio dels detalls de l'apartament per enviar a la seguent
-        self.performSegue(withIdentifier: "ApartamentDetails", sender: self);
-        
-        tableView.reloadData();
+        self.performSegue(withIdentifier: "ApartamentDetails", sender: self);        
     }
-    
-    
-    
     
     
     // horrible
