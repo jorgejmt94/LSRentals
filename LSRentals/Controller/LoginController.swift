@@ -18,7 +18,6 @@ class LoginController: UIViewController, RequestProtocol {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-        
         passText.text = valueToSendOnSegue;
     }
     

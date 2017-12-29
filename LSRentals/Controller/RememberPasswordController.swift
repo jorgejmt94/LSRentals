@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class RememberPasswordController: UIViewController, RequestProtocol {
     @IBOutlet weak var mailText: UITextField!
+    var password = String();
     
     
     @IBAction func backButton(_ sender: Any) {
@@ -60,9 +61,9 @@ class RememberPasswordController: UIViewController, RequestProtocol {
 
                 let password = responseData["password"] as? String;
                 let alertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.default) { UIAlertAction in
-                    
+                    self.password = password!;
                     self.performSegue(withIdentifier: "PasswordRemembered", sender: self);
-                }            //TODO: NO VA y  enviar mail y ponerlo en el textfield
+                }
                 self.showDefaultAlertDialog(title: "Password recovered", msg: "Your password was \(password!)", action: alertAction);
             }
         }
@@ -85,7 +86,7 @@ class RememberPasswordController: UIViewController, RequestProtocol {
         if(segue.identifier == "PasswordRemembered"){
             
             let rememberedPassword = segue.destination as? LoginController;
-            rememberedPassword!.valueToSendOnSegue = mailText.text;
+            rememberedPassword!.valueToSendOnSegue = self.password;
         }
     }
     

@@ -14,6 +14,7 @@ class ApartmentDetailsController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var apartmentNameLabel: UILabel!
     @IBOutlet weak var apartmentAddressLabel: UILabel!
     @IBOutlet weak var apartmentCapacityLabel: UILabel!
+    @IBOutlet weak var apartmentDescriptionLabel: UILabel!
     
     private let singleton = Singleton.getInstance();
     public var apartmentIdSegue: Int!;
@@ -29,7 +30,8 @@ class ApartmentDetailsController: UIViewController, MKMapViewDelegate {
         self.apartmentNameLabel.text = apartment!.name;
         self.apartmentAddressLabel.text = apartment!.location.address;
         self.apartmentCapacityLabel.text = String(apartment!.maxCapacity);
-        
+        self.apartmentDescriptionLabel.text = String(apartment!.info);
+
         //print map
         for point in singleton.getMapPoints() {
             if point.id == self.apartmentIdSegue {
