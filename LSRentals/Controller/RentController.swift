@@ -82,13 +82,23 @@ class RentController: UIViewController {
             return false;
         }
         
+        let apartment = singleton.getApartment(key: self.aparmentId);
+
+        let calendar = NSCalendar.current
+
+        //let days = calendar.dateComponents([.day], from: dateIn!.date, to: dateOut!.date).day//
+        let daysBetwn = calendar.dateComponents([.day], from: calendar.startOfDay(for: dateIn!.date), to: calendar.startOfDay(for: dateOut!.date)).day
         
+        if daysBetwn! < apartment!.maxDays {
+            showAlertMsg(message: "This apartment is not available those days.");
+            return false;
+        }
+
         if Int(stepper.value) == 0{
             showAlertMsg(message: "Capacity mut be greater than 0.");
             return false;
         }
         
-        let apartment = singleton.getApartment(key: self.aparmentId);
         if Int(stepper.value) > apartment!.maxCapacity{
             showAlertMsg(message: "This apartment does not have as much capacity.");
             return false;
