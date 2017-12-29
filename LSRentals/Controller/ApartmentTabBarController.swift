@@ -9,12 +9,16 @@
 import UIKit
 import Alamofire
 
-public class ApartmentTabBarController : UITabBarController {
+public class ApartmentTabBarController : UITabBarController, UINavigationControllerDelegate {
     
 
     override public func viewDidLoad() {
         super.viewDidLoad();
 
+    }
+    @IBAction func logOutButton(_ sender: Any) {
+        UserConfig.deleteUser();
+        self.performSegue(withIdentifier: "logOut", sender: self);
     }
     
 }

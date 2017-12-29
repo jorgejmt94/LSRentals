@@ -61,8 +61,7 @@ class MapController: UIViewController, MKMapViewDelegate{
     @IBAction func logOutButton(_ sender: Any) {
 
         UserConfig.deleteUser();
-        //  TODO no va del tot be
-        self.navigationController?.popViewController(animated: true);
+        self.performSegue(withIdentifier: "logOut", sender: self);
 
     }
 }

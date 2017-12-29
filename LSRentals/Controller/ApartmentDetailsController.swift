@@ -15,6 +15,7 @@ class ApartmentDetailsController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var apartmentAddressLabel: UILabel!
     @IBOutlet weak var apartmentCapacityLabel: UILabel!
     @IBOutlet weak var apartmentDescriptionLabel: UILabel!
+    @IBOutlet weak var rentButton: UIButton!
     
     private let singleton = Singleton.getInstance();
     public var apartmentIdSegue: Int!;
@@ -31,17 +32,22 @@ class ApartmentDetailsController: UIViewController, MKMapViewDelegate {
         self.apartmentAddressLabel.text = apartment!.location.address;
         self.apartmentCapacityLabel.text = String(apartment!.maxCapacity);
         self.apartmentDescriptionLabel.text = String(apartment!.info);
+        if !apartment!.available {
+            rentButton.removeFromSuperview();
+        }
 
         //print map
         for point in singleton.getMapPoints() {
             if point.id == self.apartmentIdSegue {
+                point.subtitle = nil;
+                point.title = nil;
                 mapView.addAnnotation(point);
             }
         }
         let initialLocation = CLLocation(latitude: 41.373131, longitude: 2.1401831);
         // center the map to barcelona
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate,
-                                                                  50000, 50000);
+                                                                  25000, 25000);
         mapView.setRegion(coordinateRegion, animated: true);
         
         
@@ -72,5 +78,8 @@ class ApartmentDetailsController: UIViewController, MKMapViewDelegate {
     @IBAction func rentButton(_ sender: Any) {
         self.performSegue(withIdentifier: "Rent", sender: self);
     }
+
+    
+    
     
 }

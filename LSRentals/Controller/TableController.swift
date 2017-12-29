@@ -35,8 +35,7 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBAction func logOutButton(_ sender: Any) {
         
         UserConfig.deleteUser();
-        self.navigationController?.popViewController(animated: true);
-        //  TODO no va del tot be
+        self.performSegue(withIdentifier: "logOut", sender: self);
     }
     
     @IBAction func stepperChanged(_ sender: Any) {

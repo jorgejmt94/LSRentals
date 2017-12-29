@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class LoginController: UIViewController, RequestProtocol {
+class LoginController: UIViewController, RequestProtocol, UINavigationControllerDelegate {
 
     @IBOutlet private weak var loginText: UITextField!;
     @IBOutlet private weak var passText: UITextField!;
@@ -19,6 +19,8 @@ class LoginController: UIViewController, RequestProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         passText.text = valueToSendOnSegue;
+        self.navigationItem.hidesBackButton = true;
+
     }
     
     @IBAction private func onLoginPressed() {
