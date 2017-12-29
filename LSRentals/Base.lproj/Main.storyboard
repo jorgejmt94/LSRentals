@@ -556,7 +556,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="638-kk-9EM">
-                                <rect key="frame" x="0.0" y="99" width="375" height="519"/>
+                                <rect key="frame" x="0.0" y="101" width="375" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="krj-bG-vcA" id="yuS-hf-cxF"/>
@@ -568,7 +568,7 @@
                         <constraints>
                             <constraint firstItem="T4W-Eh-4vh" firstAttribute="trailing" secondItem="0iy-Ky-mDJ" secondAttribute="trailing" id="1FT-ie-FBI"/>
                             <constraint firstItem="T4W-Eh-4vh" firstAttribute="top" secondItem="0iy-Ky-mDJ" secondAttribute="top" id="Ish-x9-rq4"/>
-                            <constraint firstItem="638-kk-9EM" firstAttribute="top" secondItem="T4W-Eh-4vh" secondAttribute="bottom" id="JB0-ey-903"/>
+                            <constraint firstItem="638-kk-9EM" firstAttribute="top" secondItem="T4W-Eh-4vh" secondAttribute="bottom" constant="2" id="JB0-ey-903"/>
                             <constraint firstItem="T4W-Eh-4vh" firstAttribute="leading" secondItem="0iy-Ky-mDJ" secondAttribute="leading" id="Mmu-r2-5oP"/>
                             <constraint firstItem="0iy-Ky-mDJ" firstAttribute="bottom" secondItem="638-kk-9EM" secondAttribute="bottom" id="XIH-t8-Udv"/>
                             <constraint firstItem="638-kk-9EM" firstAttribute="leading" secondItem="0iy-Ky-mDJ" secondAttribute="leading" id="kv1-Wv-J3O"/>
@@ -825,6 +825,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="ePU-OP-K8t"/>
         <segue reference="g2N-vy-yRD"/>
-        <segue reference="hCl-RA-jvT"/>
+        <segue reference="ytR-zY-rg8"/>
     </inferredMetricsTieBreakers>
 </document>
