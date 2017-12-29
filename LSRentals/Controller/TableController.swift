@@ -129,13 +129,12 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cellIdentifier");
+        //let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "customCell") as! CustomTableViewCell;
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomTableViewCell;
         
         let apartment = singleton.getApartment(key: currentKeys[indexPath.row]);
-     
-        cell.textLabel!.text = apartment!.name;
-        cell.textLabel!.numberOfLines = 0;
-        cell.textLabel!.font.withSize(15);
+        
+        cell.setInfo(name: apartment!.name, address: apartment!.location.address, image: apartment!.images.main,maxDays:  apartment!.maxDays, maxCapacity: apartment!.maxCapacity);
 
         return cell;
     }
