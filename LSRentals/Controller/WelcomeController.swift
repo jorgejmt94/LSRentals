@@ -16,9 +16,10 @@ class WelcomeController: UIViewController {
         
         let userMail: String;
         userMail = UserConfig.getRememberUserName();
-        var userName = userMail.split(separator: "@");
+        //var userName = userMail.split(separator: "@");
 
-        welcomeLabel.text = "Welcome " + userName[0] + "!";
+        //welcomeLabel.text = "Welcome " + userName[0] + "!";
+        welcomeLabel.text = userMail;
     }
     
     @IBAction func accessButton(_ sender: Any) {

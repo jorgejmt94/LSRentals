@@ -133,7 +133,9 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         
         let apartment = singleton.getApartment(key: currentKeys[indexPath.row]);
      
-        cell.textLabel!.text = "name: \(apartment!.name)";
+        cell.textLabel!.text = apartment!.name;
+        cell.textLabel!.numberOfLines = 0;
+        cell.textLabel!.font.withSize(15);
 
         return cell;
     }
