@@ -26,6 +26,9 @@ class ApartmentDetailsController: UIViewController, MKMapViewDelegate {
     
     override public func viewDidLoad() {
         super.viewDidLoad();
+        self.mapView.isZoomEnabled = false;
+        self.mapView.isScrollEnabled = false;
+        self.mapView.isUserInteractionEnabled = false;
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,10 +52,10 @@ class ApartmentDetailsController: UIViewController, MKMapViewDelegate {
                 mapView.addAnnotation(point);
             }
         }
-        let initialLocation = CLLocation(latitude: 41.373131, longitude: 2.1401831);
+        let initialLocation = CLLocation(latitude: apartment!.location.latitude, longitude: apartment!.location.longitude);
         // center the map to barcelona
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate,
-                                                                  25000, 25000);
+                                                                  1000, 1000);
         mapView.setRegion(coordinateRegion, animated: true);
         
         
