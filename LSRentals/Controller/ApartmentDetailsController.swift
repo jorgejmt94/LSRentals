@@ -21,14 +21,20 @@ class ApartmentDetailsController: UIViewController, MKMapViewDelegate {
     public var apartmentIdSegue: Int!;
 
     @IBOutlet weak var mapView: MKMapView!
+
+    var images: [UIImage]!;
+    @IBOutlet weak var imageCarousel: ImageCarouselView!
     
-    @IBOutlet weak var imageCollection: UICollectionView!
+    
+    
+    
     
     override public func viewDidLoad() {
         super.viewDidLoad();
         self.mapView.isZoomEnabled = false;
         self.mapView.isScrollEnabled = false;
         self.mapView.isUserInteractionEnabled = false;
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +49,23 @@ class ApartmentDetailsController: UIViewController, MKMapViewDelegate {
         if !apartment!.available {
             rentButton.removeFromSuperview();
         }
+        
+        
+        let mainImageUrl:URL = URL(string: apartment!.images.main)!;
+
+        let mainImageData:NSData = NSData(contentsOf: mainImageUrl)!
+        let mainImage = UIImage(data: mainImageData as Data)
+        images = [ mainImage!];
+        
+        
+        for i in 0..<apartment!.images.others.count {
+            let imageUrl:URL = URL(string: apartment!.images.others[i])!;
+            let imageData:NSData = NSData(contentsOf: imageUrl)!
+            let image = UIImage(data: imageData as Data)
+            images.append(image!);
+        }
+        
+        imageCarousel.images = images
 
         //print map
         for point in singleton.getMapPoints() {

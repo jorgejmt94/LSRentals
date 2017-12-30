@@ -402,28 +402,8 @@
                                                     <constraint firstAttribute="bottom" secondItem="Ol4-4M-KTK" secondAttribute="bottom" constant="5" id="pgm-hX-4mx"/>
                                                 </constraints>
                                             </view>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4wc-0h-ao9">
-                                                <rect key="frame" x="5" y="304.5" width="365" height="455.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D66-Jy-Nsi">
-                                                    <size key="itemSize" width="50" height="50"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6yh-aH-veK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </view>
-                                                    </collectionViewCell>
-                                                </cells>
-                                            </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDQ-dm-DFa">
-                                                <rect key="frame" x="40" y="770" width="295" height="30"/>
+                                                <rect key="frame" x="40" y="534" width="295" height="30"/>
                                                 <color key="backgroundColor" red="0.43796333630000001" green="0.67448586880000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Rent">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -432,29 +412,36 @@
                                                     <action selector="rentButton:" destination="X6B-AH-lHh" eventType="touchUpInside" id="Pik-kS-lZF"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTW-gL-Vyz" customClass="ImageCarouselView" customModule="LSRentals" customModuleProvider="target">
+                                                <rect key="frame" x="50" y="304" width="275" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="TJP-2r-SsG"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="275" id="eG9-a6-tsr"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Ms0-xh-wTw" secondAttribute="trailing" constant="10" id="5cj-iw-0vl"/>
                                             <constraint firstItem="fDQ-dm-DFa" firstAttribute="leading" secondItem="K8Z-Au-bAW" secondAttribute="leading" constant="40" id="7Tq-L9-hxX"/>
                                             <constraint firstItem="XGC-Ne-I2x" firstAttribute="leading" secondItem="K8Z-Au-bAW" secondAttribute="leading" constant="10" id="7XL-aA-INe"/>
+                                            <constraint firstItem="fDQ-dm-DFa" firstAttribute="top" secondItem="oTW-gL-Vyz" secondAttribute="bottom" constant="30" id="A68-VD-7hJ"/>
                                             <constraint firstAttribute="trailing" secondItem="OzX-fW-0i8" secondAttribute="trailing" constant="10" id="AZ0-Du-iMT"/>
                                             <constraint firstAttribute="trailing" secondItem="XGC-Ne-I2x" secondAttribute="trailing" constant="10" id="DIC-Ss-1Is"/>
-                                            <constraint firstItem="fDQ-dm-DFa" firstAttribute="top" secondItem="4wc-0h-ao9" secondAttribute="bottom" constant="10" id="EPg-GV-YI1"/>
                                             <constraint firstItem="XGC-Ne-I2x" firstAttribute="top" secondItem="Ms0-xh-wTw" secondAttribute="bottom" constant="5" id="GdS-Ev-LtM"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="600" id="Ge4-BD-g4B"/>
                                             <constraint firstItem="OzX-fW-0i8" firstAttribute="leading" secondItem="K8Z-Au-bAW" secondAttribute="leading" constant="10" id="Hql-nm-F1g"/>
-                                            <constraint firstItem="4wc-0h-ao9" firstAttribute="leading" secondItem="K8Z-Au-bAW" secondAttribute="leading" constant="5" id="ITD-f0-kwY"/>
-                                            <constraint firstAttribute="trailing" secondItem="4wc-0h-ao9" secondAttribute="trailing" constant="5" id="JEB-KS-XvL"/>
                                             <constraint firstItem="Ms0-xh-wTw" firstAttribute="top" secondItem="OzX-fW-0i8" secondAttribute="bottom" constant="10" id="NAt-Sf-8lt"/>
                                             <constraint firstItem="2Lg-Zg-cCj" firstAttribute="leading" secondItem="K8Z-Au-bAW" secondAttribute="leading" id="QI1-gW-9uE"/>
-                                            <constraint firstAttribute="bottom" secondItem="fDQ-dm-DFa" secondAttribute="bottom" constant="200" id="QkB-vX-fkk"/>
                                             <constraint firstAttribute="trailing" secondItem="fDQ-dm-DFa" secondAttribute="trailing" constant="40" id="ceb-hu-2rH"/>
+                                            <constraint firstItem="oTW-gL-Vyz" firstAttribute="top" secondItem="2Lg-Zg-cCj" secondAttribute="bottom" constant="10" id="d4L-iK-9MB"/>
                                             <constraint firstItem="2Lg-Zg-cCj" firstAttribute="top" secondItem="XGC-Ne-I2x" secondAttribute="bottom" constant="10" id="gXZ-xU-3L9"/>
+                                            <constraint firstItem="oTW-gL-Vyz" firstAttribute="leading" secondItem="K8Z-Au-bAW" secondAttribute="leading" constant="50" id="ghC-Vw-rnU"/>
                                             <constraint firstItem="Ms0-xh-wTw" firstAttribute="leading" secondItem="K8Z-Au-bAW" secondAttribute="leading" id="huA-yE-fiK"/>
                                             <constraint firstAttribute="trailing" secondItem="2Lg-Zg-cCj" secondAttribute="trailing" id="j3l-3K-ECX"/>
                                             <constraint firstItem="OzX-fW-0i8" firstAttribute="top" secondItem="K8Z-Au-bAW" secondAttribute="top" constant="10" id="xA4-7d-c8m"/>
-                                            <constraint firstItem="4wc-0h-ao9" firstAttribute="top" secondItem="2Lg-Zg-cCj" secondAttribute="bottom" constant="10" id="xt8-wJ-aTK"/>
+                                            <constraint firstAttribute="trailing" secondItem="oTW-gL-Vyz" secondAttribute="trailing" constant="50" id="zRZ-4J-9fn"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="zaK-6q-jtT"/>
                                         </constraints>
                                     </view>
@@ -485,7 +472,7 @@
                         <outlet property="apartmentCapacityLabel" destination="fvs-r6-mrG" id="Gbw-Tf-Jvt"/>
                         <outlet property="apartmentDescriptionLabel" destination="XGC-Ne-I2x" id="Rh0-me-GZU"/>
                         <outlet property="apartmentNameLabel" destination="OzX-fW-0i8" id="swQ-Hj-jAv"/>
-                        <outlet property="imageCollection" destination="4wc-0h-ao9" id="nid-6r-Fmf"/>
+                        <outlet property="imageCarousel" destination="oTW-gL-Vyz" id="kCL-7F-Vn0"/>
                         <outlet property="mapView" destination="Ol4-4M-KTK" id="h7S-pw-EJC"/>
                         <outlet property="rentButton" destination="fDQ-dm-DFa" id="8OJ-EK-Bv9"/>
                         <segue destination="Hft-g8-KEO" kind="show" identifier="Rent" id="c2Z-ve-rze"/>
