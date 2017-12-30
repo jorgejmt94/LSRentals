@@ -24,9 +24,14 @@ class ApartmentDetailsController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var imageCollection: UICollectionView!
     
+    override public func viewDidLoad() {
+        super.viewDidLoad();
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         //fill info to labels
+        self.tabBarController?.tabBar.isHidden = true;
         let apartment = singleton.getApartment(key: self.apartmentIdSegue);
         self.apartmentNameLabel.text = apartment!.name;
         self.apartmentAddressLabel.text = apartment!.location.address;

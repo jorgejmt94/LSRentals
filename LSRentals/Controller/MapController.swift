@@ -18,6 +18,7 @@ class MapController: UIViewController, MKMapViewDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
 
+        self.tabBarController?.tabBar.isHidden = false;
         mapView.delegate = self;
         //TODO: peticio apartaments
         let singleton = Singleton.getInstance();

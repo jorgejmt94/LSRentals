@@ -27,9 +27,10 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
     private let singleton = Singleton.getInstance();
     private var idSegue = 0;
     
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
+        self.tabBarController?.tabBar.isHidden = false;
     }
     
     @IBAction func logOutButton(_ sender: Any) {

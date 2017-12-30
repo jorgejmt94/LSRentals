@@ -89,7 +89,7 @@ class RentController: UIViewController {
         //let days = calendar.dateComponents([.day], from: dateIn!.date, to: dateOut!.date).day//
         let daysBetwn = calendar.dateComponents([.day], from: calendar.startOfDay(for: dateIn!.date), to: calendar.startOfDay(for: dateOut!.date)).day
         
-        if daysBetwn! < apartment!.maxDays {
+        if daysBetwn! > apartment!.maxDays {
             showAlertMsg(message: "This apartment is not available those days.");
             return false;
         }
