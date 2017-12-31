@@ -67,10 +67,10 @@ class ImageCarouselView: UIView {
         
         addImages()
         
-        if showPageControl {
+        //if showPageControl {
             addPageControl()
             carouselScrollView.delegate = self
-        }
+        //}
     }
     
     func addImages() {
@@ -80,7 +80,7 @@ class ImageCarouselView: UIView {
         for i in 0..<images.count {
             let imageView = UIImageView(frame: CGRect(x: bounds.width * CGFloat(i), y: 0, width: bounds.width, height: bounds.height))
             imageView.image = images[i]
-            //imageView.contentMode = .scaleAspectFill
+            imageView.contentMode = .scaleAspectFill
             
             imageView.layer.masksToBounds = true
             imageView.isUserInteractionEnabled = true
@@ -96,7 +96,7 @@ class ImageCarouselView: UIView {
             pageControl.numberOfPages = images.count
             pageControl.sizeToFit()
             pageControl.currentPage = 0
-            pageControl.center = CGPoint(x: self.center.x, y: bounds.height - pageControl.bounds.height/2 - 8)
+            pageControl.center = CGPoint(x: self.center.x/1.5, y: bounds.height - pageControl.bounds.height/2 - 4)
             
             if let pageColor = self.pageColor {
                 pageControl.pageIndicatorTintColor = pageColor
