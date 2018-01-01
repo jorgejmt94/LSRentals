@@ -138,23 +138,23 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahR-EC-C1u">
                                                 <rect key="frame" x="20" y="87" width="335" height="50"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="eyB-8G-aQg">
+                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="eyB-8G-aQg">
                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="130" id="ye7-DL-SNh"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Gl-2i-BzW">
+                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Gl-2i-BzW">
                                                         <rect key="frame" x="145" y="0.0" width="150" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="XES-RG-g4E"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="continue"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -618,7 +618,7 @@
                                 <rect key="frame" x="0.0" y="104" width="1024" height="1213"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="CustomCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="7x4-JT-blK" customClass="CustomTableViewCell" customModule="LSRentals" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CustomCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="7x4-JT-blK" customClass="CustomTableViewCell" customModule="LSRentals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="1024" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7x4-JT-blK" id="XGa-fn-d98">
@@ -651,7 +651,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ApartmentAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0c8-g4-2mL">
-                                                            <rect key="frame" x="172" y="41" width="842" height="14"/>
+                                                            <rect key="frame" x="172" y="41" width="842" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -711,6 +711,14 @@
                                                                 <constraint firstAttribute="bottom" secondItem="p6t-Pl-4BG" secondAttribute="bottom" id="q1d-Dh-Rr1"/>
                                                             </constraints>
                                                         </view>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VpM-wl-7gp">
+                                                            <rect key="frame" x="40" y="40" width="20" height="20"/>
+                                                            <subviews>
+                                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="o5H-JI-uw6">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                </activityIndicatorView>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -722,9 +730,11 @@
                                                         <constraint firstItem="2GJ-ef-JsT" firstAttribute="leading" secondItem="Mvm-2o-he8" secondAttribute="trailing" constant="15" id="YUW-ag-ey5"/>
                                                         <constraint firstAttribute="trailing" secondItem="5o2-vh-PTY" secondAttribute="trailing" constant="5" id="ZVc-eL-1LO"/>
                                                         <constraint firstItem="5o2-vh-PTY" firstAttribute="leading" secondItem="Mvm-2o-he8" secondAttribute="trailing" constant="15" id="d9u-CY-gXD"/>
+                                                        <constraint firstItem="VpM-wl-7gp" firstAttribute="centerX" secondItem="Mvm-2o-he8" secondAttribute="centerX" id="el0-IC-VfC"/>
                                                         <constraint firstItem="5o2-vh-PTY" firstAttribute="top" secondItem="2GJ-ef-JsT" secondAttribute="bottom" constant="3" id="iqI-xi-Zeu"/>
                                                         <constraint firstItem="0c8-g4-2mL" firstAttribute="top" secondItem="dfv-Et-0Oq" secondAttribute="bottom" constant="8" id="nOU-Fx-BtS"/>
                                                         <constraint firstItem="Mvm-2o-he8" firstAttribute="leading" secondItem="hz7-9v-oid" secondAttribute="leading" constant="5" id="oAk-7I-urV"/>
+                                                        <constraint firstItem="VpM-wl-7gp" firstAttribute="top" secondItem="2GJ-ef-JsT" secondAttribute="top" id="r5K-bL-7ls"/>
                                                         <constraint firstItem="2GJ-ef-JsT" firstAttribute="top" secondItem="dfv-Et-0Oq" secondAttribute="bottom" constant="7" id="vnh-2z-INm"/>
                                                         <constraint firstAttribute="trailing" secondItem="0c8-g4-2mL" secondAttribute="trailing" constant="10" id="znG-LQ-ftJ"/>
                                                     </constraints>
@@ -744,6 +754,7 @@
                                             <outlet property="apartmentDays" destination="0AX-aA-bk7" id="4HK-8y-c1j"/>
                                             <outlet property="apartmentImage" destination="Mvm-2o-he8" id="tUa-qt-j2N"/>
                                             <outlet property="apartmentName" destination="dfv-Et-0Oq" id="Vj5-uf-Hbl"/>
+                                            <outlet property="progressImgLoad" destination="o5H-JI-uw6" id="Npu-RW-M6t"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -827,17 +838,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nd2-iW-oGw">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nd2-iW-oGw">
                                 <rect key="frame" x="40" y="206" width="944" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" smartQuotesType="yes"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZg-rK-BjA">
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZg-rK-BjA">
                                 <rect key="frame" x="40" y="256" width="944" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5k-zL-S1z">
                                 <rect key="frame" x="60" y="321" width="904" height="30"/>

@@ -9,7 +9,10 @@ import Foundation
 import UIKit
 import Alamofire
 
-class RentController: UIViewController {
+class RentController: UIViewController, UITextFieldDelegate {
+    
+    private let TAG_NAME:  Int     = 1;
+    private let TAG_SURNAME: Int     = 2;
     
     @IBOutlet weak var apartmentNameLabel: UILabel!
     @IBOutlet weak var apartmentAddressLabel: UILabel!
@@ -27,6 +30,30 @@ class RentController: UIViewController {
     
     @IBAction func stepperChanged(_ sender: Any) {
         numberOfPeople.text = Int(stepper.value).description;
+    }
+    
+    override func viewDidLoad() {
+        
+        self.name.delegate = self;
+        self.surname.delegate = self;
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        switch textField.tag {
+            
+            case TAG_NAME:
+                
+                surname.becomeFirstResponder();
+                break;
+            
+            case TAG_SURNAME:
+                textField.resignFirstResponder();
+                break;
+            default:
+                break;
+        }
+        return true;
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,7 +122,7 @@ class RentController: UIViewController {
         }
 
         if Int(stepper.value) == 0{
-            showAlertMsg(message: "Capacity mut be greater than 0.");
+            showAlertMsg(message: "Capacity must be greater than 0.");
             return false;
         }
         

@@ -155,6 +155,7 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         print("Cell selected: \(indexPath.row)");
         
         let apartment = singleton.getApartment(key: currentKeys[indexPath.row]);
+        tableView.deselectRow(at: indexPath, animated: true);
         self.idSegue = apartment!.identifier;
         //TODO: peticio dels detalls de l'apartament per enviar a la seguent
         self.performSegue(withIdentifier: "ApartamentDetails", sender: self);        
@@ -210,6 +211,5 @@ class TableController : UIViewController, UITableViewDelegate, UITableViewDataSo
         self.keys = Array(apartments.keys);
         self.currentKeys = Array(apartments.keys);
         tableView.reloadData();
-        print("count on tab: \(apartments.count)");
     }
 }

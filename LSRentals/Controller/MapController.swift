@@ -20,7 +20,7 @@ class MapController: UIViewController, MKMapViewDelegate{
 
         self.tabBarController?.tabBar.isHidden = false;
         mapView.delegate = self;
-        //TODO: peticio apartaments
+
         let singleton = Singleton.getInstance();
         
         for point in singleton.getMapPoints() {

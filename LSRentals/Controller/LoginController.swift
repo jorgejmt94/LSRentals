@@ -9,8 +9,11 @@
 import UIKit
 import Foundation
 
-class LoginController: UIViewController, RequestProtocol, UINavigationControllerDelegate {
-
+class LoginController: UIViewController, RequestProtocol, UINavigationControllerDelegate, UITextFieldDelegate {
+    
+    private let TAG_EMAIL:  Int     = 1;
+    private let TAG_PASSWD: Int     = 2;
+    
     @IBOutlet private weak var loginText: UITextField!;
     @IBOutlet private weak var passText: UITextField!;
     
@@ -20,7 +23,9 @@ class LoginController: UIViewController, RequestProtocol, UINavigationController
         super.viewWillAppear(animated);
         passText.text = valueToSendOnSegue;
         self.navigationItem.hidesBackButton = true;
-
+        
+        self.loginText.delegate = self;
+        self.passText.delegate = self;
     }
     
     @IBAction private func onLoginPressed() {
@@ -47,6 +52,23 @@ class LoginController: UIViewController, RequestProtocol, UINavigationController
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        switch textField.tag {
+            
+            case TAG_EMAIL:
+                
+                passText.becomeFirstResponder();
+                break;
+            
+            case TAG_PASSWD:
+                textField.resignFirstResponder();
+                break;
+            default:
+                break;
+            }
+        return true;
+    }
 
 
     func getParameters() -> ([String : Any]) {
